@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surron Tours Tarragona - E-Bike Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo span {
+            color: #ff6b35;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b35;
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23228B22" width="1200" height="600"/><path fill="%231a5c1a" d="M0,300 Q300,250 600,300 T1200,300 L1200,600 L0,600 Z" opacity="0.3"/><circle cx="200" cy="150" r="80" fill="%2390EE90" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero .highlight {
+            color: #90EE90;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero .cta-button {
+            font-size: 18px;
+            padding: 15px 40px;
+            display: inline-block;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+
+        /* THREE MODES */
+        .modes {
+            background: #f9f9f9;
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .mode-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .mode-card.eco {
+            border-top: 5px solid #90EE90;
+        }
+
+        .mode-card.standard {
+            border-top: 5px solid #FFD700;
+        }
+
+        .mode-card.sport {
+            border-top: 5px solid #FF4444;
+        }
+
+        .mode-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .mode-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mode-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .mode-benefits {
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .mode-benefits li {
+            list-style: none;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .mode-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        /* ROUTES */
+        .routes {
+            background: white;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .route-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b35;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .route-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .route-difficulty {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .route-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* PRICING */
+        .pricing {
+            background: #f9f9f9;
+        }
+
+        .pricing-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-box {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .price-amount {
+            font-size: 56px;
+            font-weight: 800;
+            color: #ff6b35;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .price-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .price-includes {
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .price-includes li {
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .price-includes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #90EE90;
+            font-size: 18px;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            background: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #f9f9f9;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            background: #f5f5f5;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #efefef;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button-large {
+            background: white;
+            color: #ff6b35;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .cta-button-large:hover {
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-contact {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-contact a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 36px;
+            }
+
+            .mode-card, .route-card {
+                padding: 25px;
+            }
+
+            .price-amount {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🏍️ Surron <span>Tours</span></div>
+            <nav>
+                <a href="#modes">Modes</a>
+                <a href="#routes">Routes</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="#booking" class="cta-button">Book Now</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>One Surron<br><span class="highlight">Three Modes</span><br>Your Adventure</h1>
+        <p>1-hour electric e-bike tours in beautiful Tarragona</p>
+        <a href="#booking" class="cta-button">Book Your Adventure</a>
+    </section>
+
+    <!-- THREE MODES -->
+    <section class="modes" id="modes">
+        <div class="container">
+            <h2>One Motor, Three Power Levels</h2>
+
+            <div class="modes-grid">
+                <!-- ECO MODE -->
+                <div class="mode-card eco">
+                    <div class="mode-icon">🟢</div>
+                    <h3>ECO Mode</h3>
+                    <p><strong>Perfect for beginners & families</strong></p>
+                    <p style="font-size: 13px; color: #999;">Controlled power • Safe pace • Scenic experience</p>
+                    <ul class="mode-benefits">
+                        <li>Limited power setting</li>
+                        <li>Professional guide controls speed</li>
+                        <li>Perfect for first-timers</li>
+                        <li>Scenic trail experience</li>
+                        <li>Relaxed pace</li>
+                    </ul>
+                </div>
+
+                <!-- STANDARD MODE -->
+                <div class="mode-card standard">
+                    <div class="mode-icon">🟡</div>
+                    <h3>STANDARD Mode</h3>
+                    <p><strong>For intermediate riders</strong></p>
+                    <p style="font-size: 13px; color: #999;">Balanced power • Technical trails • More challenge</p>
+                    <ul class="mode-benefits">
+                        <li>Balanced power setting</li>
+                        <li>Intermediate skill level</li>
+                        <li>Technical trail options</li>
+                        <li>More challenging terrain</li>
+                        <li>Still guided & safe</li>
+                    </ul>
+                </div>
+
+                <!-- SPORT MODE -->
+                <div class="mode-card sport">
+                    <div class="mode-icon">🔴</div>
+                    <h3>SPORT Mode</h3>
+                    <p><strong>For advanced riders</strong></p>
+                    <p style="font-size: 13px; color: #999;">Full power • 80+ km/h • Maximum adrenaline</p>
+                    <ul class="mode-benefits">
+                        <li>Maximum power unleashed</li>
+                        <li>Expert riders only</li>
+                        <li>Full speed capability</li>
+                        <li>Maximum adrenaline</li>
+                        <li>Professional supervision</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; color: white; padding: 30px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16px; margin-bottom: 10px;"><strong>Same 60V Electric Motor • Adjustable Power Settings Built-In</strong></p>
+                <p style="font-size: 14px; opacity: 0.9;">Professional guides adjust YOUR power mode to match YOUR skill level</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROUTES -->
+    <section class="routes" id="routes">
+        <div class="container">
+            <h2>Four Epic Routes</h2>
+
+            <div class="routes-grid">
+                <div class="route-card">
+                    <div class="route-difficulty">🟢 BEGINNER</div>
+                    <h3>Vineyard Route</h3>
+                    <p>Cruise through beautiful vineyards on smooth trails. Perfect for families and scenic photo opportunities. Rolling hills, wine country vibes, and breathtaking views of Tarragona countryside.</p>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-difficulty">🟡 INTERMEDIATE</div>
+                    <h3>Forest Trail</h3>
+                    <p>Standard forest trail with moderate technical difficulty. Mix of terrain, tree cover, and natural obstacles. Great for riders looking for more of a challenge without extreme difficulty.</p>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-difficulty">🔴 ADVANCED</div>
+                    <h3>Off-Road Challenge</h3>
+                    <p>Serious off-road terrain with rocky sections, steep climbs, and technical obstacles. For experienced riders seeking adrenaline and technical skill testing. Full throttle allowed.</p>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-difficulty">🔴+ EXPERT</div>
+                    <h3>Advanced Forest</h3>
+                    <p>Expert-only terrain combining dense forest trails, challenging obstacles, and maximum speed sections. Full power mode. This is pure adrenaline for skilled riders only.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple Pricing</h2>
+
+            <div class="pricing-container">
+                <div class="price-box">
+                    <div class="price-amount">€100</div>
+                    <div class="price-description">per person</div>
+
+                    <ul class="price-includes">
+                        <li>1 hour adventure on Surron e-bike</li>
+                        <li>Professional helmet & safety gear</li>
+                        <li>Expert guide (small group max 3 bikes)</li>
+                        <li>Full insurance coverage</li>
+                        <li>Safety briefing included</li>
+                        <li>Choice of routes & difficulty levels</li>
+                        <li>Photos during tour (optional)</li>
+                    </ul>
+
+                    <a href="#booking" class="cta-button">Book Now</a>
+                </div>
+
+                <p style="font-size: 14px; color: #666; margin-top: 30px;">
+                    <strong>Groups:</strong> Book 3+ people and ask about group discounts<br>
+                    <strong>Private Tours:</strong> Custom itineraries available
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Date</h3>
+                    <p>Pick a weekend or weekday that works for you. Book online in 2 minutes.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Select Your Mode</h3>
+                    <p>Choose Eco, Standard, or Sport based on your skill level and mood.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Meet Your Guide</h3>
+                    <p>Arrive 15 minutes early. Meet your professional guide & get fitted for helmet.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Safety Briefing</h3>
+                    <p>Learn how to use your Surron, trail rules, and emergency procedures (5 min).</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Ride!</h3>
+                    <p>1 hour of pure adventure through Tarragona's beautiful terrain.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Share & Repeat</h3>
+                    <p>Get your photos, leave a review, and book your next adventure!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is a Surron e-bike?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A Surron is a lightweight electric dirt bike designed for off-road adventures. It has a 60V electric motor, can reach 80+ km/h in Sport mode, and is perfect for both beginners and experts (power is adjustable!). Zero emissions, maximum fun.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need experience to ride?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Not at all! ECO mode is designed for complete beginners. Our professional guide will teach you everything you need to know. Many of our customers have never ridden an e-bike before. We match the difficulty to YOUR level.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's the difference between the three modes?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        It's the same powerful motor, but the power output is adjustable. ECO = controlled power for beginners. STANDARD = balanced power for intermediate riders. SPORT = full power for experts (80+ km/h). Your guide controls which mode is best for you.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's included in the price?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        €100 per person includes: the 1-hour tour, professional helmet, safety gear, expert guide, full insurance, safety briefing, route choice, and photos (if you want). Nothing extra to pay during the tour.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is it safe?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! All riders get professional helmets, safety briefing, and expert guides. We have full insurance coverage. Bikes are regularly maintained. We match the route difficulty to your skill level. Safety is our #1 priority.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if the weather is bad?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We operate in light rain (e-bikes are waterproof!). For severe weather, you can reschedule to another date or get a full refund. We'll give you 24-hour notice if we need to cancel.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I book for a group?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Groups of 3+ people get special rates. We also offer custom private tours for team building, family reunions, or bachelor parties. Contact us for custom group pricing.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Best day ever! I've never ridden an e-bike before and your guide made me feel completely safe. The Surron is incredible - so much fun!"
+                    </div>
+                    <div class="testimonial-author">Maria, Barcelona</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Exactly what we were looking for. Beautiful trails, professional guides, and the three modes meant everyone in our group had the right level of challenge."
+                    </div>
+                    <div class="testimonial-author">Carlos & Family, Tarragona</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "As an experienced rider, I pushed Sport mode to the limit. Incredible terrain, amazing guide, and pure adrenaline. Coming back next month!"
+                    </div>
+                    <div class="testimonial-author">Alex, Madrid</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="booking">
+        <h2>Ready for Your Adventure?</h2>
+        <p>Limited spots available. Book your Surron tour this weekend!</p>
+        <a href="https://calendly.com/your-link-here" target="_blank" class="cta-button-large">Book Your Tour Now</a>
+        <p style="margin-top: 30px; font-size: 16px;">Or contact us: <a href="mailto:info@surrontarragona.com" style="color: white; text-decoration: underline;">info@surrontarragona.com</a> | WhatsApp: +34 XXX XXX XXX</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h3 style="margin-bottom: 20px;">🏍️ Surron Tours Tarragona</h3>
+
+            <div class="footer-contact">
+                📍 Tarragona, Spain | 🌍 250 hectares of adventure<br>
+                📧 <a href="mailto:info@surrontarragona.com">info@surrontarragona.com</a><br>
+                📱 <a href="https://wa.me/34XXX">WhatsApp: +34 XXX XXX XXX</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="#modes">Modes</a>
+                <a href="#routes">Routes</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 13px; opacity: 0.8;">
+                © 2026 Surron Tours Tarragona. All rights reserved. | Professional guides • Full insurance • Expert support
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
