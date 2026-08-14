@@ -78,7 +78,8 @@
 
         /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23228B22" width="1200" height="600"/><path fill="%231a5c1a" d="M0,300 Q300,250 600,300 T1200,300 L1200,600 L0,600 Z" opacity="0.3"/><circle cx="200" cy="150" r="80" fill="%2390EE90" opacity="0.2"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/foto 3 .png');
+            background-size: cover;
             background-size: cover;
             background-position: center;
             color: white;
@@ -230,6 +231,15 @@
             border-radius: 10px;
             border-left: 5px solid #ff6b35;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .route-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .route-card h3 {
@@ -634,6 +644,10 @@
     <section class="routes" id="routes">
         <div class="container">
             <h2>Four Epic Routes</h2>
+
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="images/foto 2 .png" alt="All Routes Overview" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            </div>
 
             <div class="routes-grid">
                 <div class="route-card">
