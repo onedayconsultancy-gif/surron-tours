@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    Surron Tours Tarragona — Meta Pixel met toestemmingsvraag
-   Pixel ID: 926554698599724
+   Pixel ID: 2038328800192468 (dataset "surrontarragona")
 
    De pixel laadt PAS nadat de bezoeker akkoord gaat. Dat is geen
    nettigheid maar de Spaanse/EU-cookiewet (AEPD handhaaft hierop).
@@ -11,7 +11,7 @@
      <script src="/pixel.js" data-event="Lead"></script>
    ───────────────────────────────────────────────────────────── */
 (function () {
-  var PIXEL_ID = '926554698599724';
+  var PIXEL_ID = '2038328800192468';
   var KEY = 'st_consent';
 
   var me = document.currentScript ||
