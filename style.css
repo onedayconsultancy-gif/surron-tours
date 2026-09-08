@@ -180,7 +180,17 @@ nav a:hover{color:var(--orange)}
 
 /* Echte klanten, echte foto's. De foto staat boven het citaat omdat een
    gezicht sneller vertrouwen wint dan een sterretje. */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:left}
+/* Schuifbaar spoor. Het vegen zelf doet de browser met scroll-snap, dus
+   het werkt ook als het script niet laadt: dan staan de kaarten er nog
+   steeds, gewoon naast elkaar met een scrollbalk. */
+.rev-slider{position:relative}
+.rev-track{display:flex;gap:26px;text-align:left;overflow-x:auto;
+           scroll-snap-type:x mandatory;scroll-behavior:smooth;
+           -webkit-overflow-scrolling:touch;scrollbar-width:none;
+           padding:4px 2px 6px}
+.rev-track::-webkit-scrollbar{display:none}
+.rev-track:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:16px}
+.rev-track>.rev{flex:0 0 calc((100% - 52px)/3);scroll-snap-align:start}
 .rev{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
      display:flex;flex-direction:column;margin:0}
 .rev img{width:100%;height:230px;object-fit:cover;display:block}
@@ -199,8 +209,15 @@ nav a:hover{color:var(--orange)}
 .rev-split .split-img{order:2}
 
 @media (max-width:900px){
-  .rev-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
-  .rev img{height:260px}
+  .rev-track{max-width:520px;margin:0 auto}
+  .rev-track>.rev{flex:0 0 100%}
+  /* Kaart en bolletjes moeten samen in één telefoonscherm passen, ook op
+     een iPhone SE. Anders staat de aanwijzing dat er meer is onder de
+     vouw en veegt niemand door. De foto levert die hoogte in, niet de
+     tekst — die is het hele punt. */
+  .rev img{height:190px}
+  .rev blockquote{padding:18px 20px 4px}
+  .rev figcaption{padding:12px 20px 18px}
   .rev-split .split-img{order:-1}
   .feel .split{margin-bottom:44px}
 }
@@ -448,3 +465,55 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
   .foot a{padding:5px 0;margin-bottom:4px}
   .kort-meer a{display:inline-block;padding:6px 0}
 }
+
+/* ---------- REVIEWSCHUIVER (v12) ---------- */
+/* Bolletjes zijn de enige aanwijzing dat er meer te zien is, dus ze
+   moeten groot genoeg zijn om te raken en zichtbaar genoeg om op te
+   vallen. Het gekleurde bolletje is 26px breed zodat je in één oogopslag
+   ziet waar je bent. */
+.rev-dots{display:flex;justify-content:center;gap:9px;margin-top:24px}
+.rev-dot{width:10px;height:10px;padding:0;border:0;border-radius:99px;cursor:pointer;
+         background:#cfcac5;transition:width .25s,background .25s}
+.rev-dot.on{width:26px;background:var(--orange)}
+.rev-dot:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+.rev-nav{position:absolute;top:calc(50% - 44px);transform:translateY(-50%);z-index:3;
+         width:44px;height:44px;border-radius:99px;border:1px solid var(--line);
+         background:rgba(255,255,255,.94);color:var(--ink);cursor:pointer;
+         display:flex;align-items:center;justify-content:center;
+         box-shadow:0 6px 18px rgba(0,0,0,.13);transition:background .2s,opacity .2s}
+.rev-nav:hover{background:#fff}
+.rev-nav:disabled{opacity:.32;cursor:default}
+.rev-nav:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.rev-prev{left:-14px}
+.rev-next{right:-14px}
+
+@media (max-width:900px){
+  /* Op een telefoon veeg je; pijlen zouden alleen maar over de foto
+     liggen. De bolletjes blijven, want die vertellen dat er meer is. */
+  .rev-nav{display:none}
+  .rev-dots{margin-top:20px}
+  .rev-dot{width:11px;height:11px}
+  .rev-dot.on{width:28px}
+  /* Groter raakvlak zonder de bolletjes zelf groter te maken. */
+  .rev-dots{padding:10px 0}
+  .rev-dot{position:relative}
+  .rev-dot::after{content:"";position:absolute;inset:-12px -7px}
+}
+@media (max-width:400px){
+  .rev img{height:172px}
+  .rev blockquote p{font-size:15px;line-height:1.58}
+}
+
+/* ---------- KOP OP SMALLE TELEFOONS (v13) ---------- */
+/* De grotere taalknoppen duwden de WhatsApp-knop over het logo heen: het
+   logo kromp mee, maar de letters niet, dus stond "SURRON TOURS" onder
+   de knop. Onder de 430px laten we het woord WhatsApp weg — het groene
+   icoon is duidelijk genoeg — en past alles weer naast elkaar. */
+@media (max-width:430px){
+  .hdr-wa{font-size:0;gap:0;padding:10px 12px}
+  .hdr-wa svg{margin:0}
+  .logo{flex-shrink:0}
+}
+/* De beeldband: staande foto's mogen niet de halve pagina vullen. */
+.beeld-grid img{object-position:center 55%}
