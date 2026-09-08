@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/style.css?v=13">
+<link rel="stylesheet" href="/style.css?v=14">
 </head>
 <body>
 
@@ -109,9 +109,39 @@
 </section>
 
 <section class="beeld">
-  <div class="beeld-grid">
-    <img src="/img/feel-trail.jpg" alt="Pilot en moto elèctrica Surron per un camí entre pins a la finca privada a prop de Tarragona" loading="lazy" width="1600" height="1000">
-    <img src="/img/fleet-three.jpg" alt="Tres motos elèctriques Surron Light Bee en filera a la finca privada a prop de Tarragona" loading="lazy" width="787" height="1400">
+  <div class="container">
+    <h2 class="section-title beeld-titel">Com és allà fora.</h2>
+    <div class="foto-slider rev-slider" data-slider>
+      <div class="foto-track slider-track" tabindex="0">
+        <figure class="foto" data-slide>
+          <img src="/img/feel-trail.jpg" alt="Dues persones aturades en una pista entre la brolla a la finca privada a prop de Tarragona" loading="lazy">
+          <figcaption>A la pista</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/fleet-three.jpg" alt="Tres motos elèctriques Surron Light Bee en filera sobre terra roja, amb vinya i pineda al darrere" loading="lazy">
+          <figcaption>Una per a cadascú</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/vineyard-track.jpg" alt="Dues motos elèctriques en un camí de terra roja entre les vinyes" loading="lazy">
+          <figcaption>Entre les vinyes</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/track-clouds.jpg" alt="Dues motos elèctriques en una pista roja oberta amb els turons boscosos al darrere" loading="lazy">
+          <figcaption>Pista oberta</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/valley-bikes.jpg" alt="Dues motos elèctriques a l'herba seca amb la vall i els pins al fons" loading="lazy">
+          <figcaption>La vall</figcaption>
+        </figure>
+      </div>
+      <div class="foto-dots slider-dots" hidden>
+        <button class="rev-dot" type="button" aria-label="Ves a la foto 1"></button>
+        <button class="rev-dot" type="button" aria-label="Ves a la foto 2"></button>
+        <button class="rev-dot" type="button" aria-label="Ves a la foto 3"></button>
+        <button class="rev-dot" type="button" aria-label="Ves a la foto 4"></button>
+        <button class="rev-dot" type="button" aria-label="Ves a la foto 5"></button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -187,12 +217,12 @@
     <h2 class="section-title">El que diuen després.</h2>
     <p class="section-intro">Tres persones que han rodat amb nosaltres, amb les seves pròpies paraules.</p>
     <div class="rev-grid">
-    <div class="rev-slider" data-rev-slider>
-      <button class="rev-nav rev-prev" type="button" aria-label="Ressenya anterior" hidden>
+    <div class="rev-slider" data-slider>
+      <button class="rev-nav slider-prev" type="button" aria-label="Ressenya anterior" hidden>
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div class="rev-track" tabindex="0">
-        <figure class="rev" role="group" aria-roledescription="ressenya"
+      <div class="rev-track slider-track" tabindex="0">
+        <figure class="rev" data-slide role="group" aria-roledescription="ressenya"
                 aria-label="1 / 3">
           <img src="/img/rider-trio.jpg" alt="Miguel Guadalajara" loading="lazy" width="900" height="900">
           <blockquote>
@@ -201,7 +231,7 @@
           </blockquote>
           <figcaption>Miguel Guadalajara<div class="rev-src">Traduït del castellà</div></figcaption>
         </figure>
-        <figure class="rev" role="group" aria-roledescription="ressenya"
+        <figure class="rev" data-slide role="group" aria-roledescription="ressenya"
                 aria-label="2 / 3">
           <img src="/img/rider-duo.jpg" alt="José Manuel Quero" loading="lazy" width="900" height="900">
           <blockquote>
@@ -210,7 +240,7 @@
           </blockquote>
           <figcaption>José Manuel Quero<div class="rev-src">Traduït del castellà</div></figcaption>
         </figure>
-        <figure class="rev" role="group" aria-roledescription="ressenya"
+        <figure class="rev" data-slide role="group" aria-roledescription="ressenya"
                 aria-label="3 / 3">
           <img src="/img/rider-sunset.jpg" alt="Jill" loading="lazy" width="900" height="900">
           <blockquote>
@@ -220,10 +250,10 @@
           <figcaption>Jill<div class="rev-src">Traduït del neerlandès</div></figcaption>
         </figure>
       </div>
-      <button class="rev-nav rev-next" type="button" aria-label="Ressenya següent" hidden>
+      <button class="rev-nav slider-next" type="button" aria-label="Ressenya següent" hidden>
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div class="rev-dots" hidden>
+      <div class="rev-dots slider-dots" hidden>
         <button class="rev-dot" type="button" aria-label="Ves a la ressenya 1"></button>
         <button class="rev-dot" type="button" aria-label="Ves a la ressenya 2"></button>
         <button class="rev-dot" type="button" aria-label="Ves a la ressenya 3"></button>
