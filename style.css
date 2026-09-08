@@ -259,7 +259,11 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
   .factbar-grid{grid-template-columns:repeat(2,1fr)}
   .fact{border-bottom:1px solid rgba(255,255,255,.09)}
   .fact:nth-child(2n){border-right:0}
-  .fact:last-child{grid-column:1/-1;border-right:0;border-bottom:0}
+  /* Alleen laten doorlopen als het aantal feiten oneven is; bij vier
+     stond de laatste anders in zijn eentje op een volle regel. */
+  .fact:last-child{border-right:0;border-bottom:0}
+  .fact:last-child:nth-child(odd){grid-column:1/-1}
+  .fact:nth-last-child(2):nth-child(odd){border-bottom:0}
   .split{grid-template-columns:1fr;gap:34px}
   .split.rev .split-img{order:-1}
   .split img{height:320px}
@@ -428,3 +432,19 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
 .geen-auto b{display:block;font-family:'Montserrat',sans-serif;font-size:17px;
              margin-bottom:8px;color:var(--ink)}
 .geen-auto p{margin:0;color:var(--grey);font-size:15.5px;line-height:1.62}
+
+/* ---------- MOBIEL: LAATSTE PUNTJES (v11) ---------- */
+@media (max-width:768px){
+  /* De vier punten onder de titel wikkelden als 1-1-2. Twee kolommen
+     leest rustiger en houdt de knoppen erboven vrij. */
+  .hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;
+              justify-items:start;max-width:330px;margin-left:auto;margin-right:auto}
+  .hero-trust span{display:flex;align-items:flex-start;line-height:1.35;text-align:left}
+  .hero-trust span::before{flex:none}
+
+  /* Tikdoelen: een duim is breder dan 33 pixels. */
+  .lang a{padding:9px 10px;font-size:12.5px}
+  .terug{display:inline-block;padding:8px 0;font-size:16px}
+  .foot a{padding:5px 0;margin-bottom:4px}
+  .kort-meer a{display:inline-block;padding:6px 0}
+}
