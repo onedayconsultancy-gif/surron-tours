@@ -44,6 +44,21 @@
     fbq('init', PIXEL_ID);
     fbq('track', 'PageView');
     if (extraEvent) fbq('track', extraEvent);
+    watchWhatsApp();
+  }
+
+  /* Klik op een WhatsApp-knop telt als Contact. Zonder dit is iedereen
+     die via WhatsApp boekt onzichtbaar voor Meta: het gesprek zelf mag
+     in Europa niet gemeten worden, de klik ernaartoe wel. */
+  var waBound = false;
+  function watchWhatsApp() {
+    if (waBound) return;
+    waBound = true;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+      if (!a || !window.fbq) return;
+      fbq('track', 'Contact', { content_name: 'whatsapp_button' });
+    }, true);
   }
 
   function saveAndGo(value) {

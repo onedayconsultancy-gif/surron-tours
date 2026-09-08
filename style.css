@@ -153,7 +153,7 @@ nav a:hover{color:var(--orange)}
 
 /* ---------- BANNER ---------- */
 .banner{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:80px 22px;background:#000}
-.banner::before{content:"";position:absolute;inset:0;background:url('/img/action-jump.jpg') center 35%/cover no-repeat;opacity:.55}
+.banner::before{content:"";position:absolute;inset:0;background:url('/img/couple-vineyard.jpg') center 42%/cover no-repeat;opacity:.58}
 .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.75))}
 .banner-inner{position:relative;z-index:2;max-width:760px}
 .banner h2{color:#fff;font-size:clamp(28px,4.4vw,44px);font-weight:900;margin-bottom:16px;text-shadow:0 3px 18px rgba(0,0,0,.6)}
@@ -177,6 +177,33 @@ nav a:hover{color:var(--orange)}
 .review-empty .stars{font-size:26px;color:#d8d8d8;letter-spacing:4px;margin-bottom:16px}
 .review-empty h3{font-size:23px;font-weight:800;margin-bottom:12px}
 .review-empty p{color:var(--grey);font-size:16px;margin-bottom:24px}
+
+/* Echte klanten, echte foto's. De foto staat boven het citaat omdat een
+   gezicht sneller vertrouwen wint dan een sterretje. */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:left}
+.rev{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+     display:flex;flex-direction:column;margin:0}
+.rev img{width:100%;height:230px;object-fit:cover;display:block}
+.rev blockquote{padding:22px 24px 6px;margin:0;flex:1}
+.rev-stars{color:#f0b429;font-size:17px;letter-spacing:2px;margin-bottom:12px}
+.rev blockquote p{font-size:15.5px;line-height:1.62;color:#3a3a3a;font-style:italic}
+.rev figcaption{padding:14px 24px 22px;font-weight:700;font-size:15px}
+.rev-src{font-weight:400;font-size:12.5px;color:#9a9a9a;font-style:normal;margin-top:3px}
+
+/* Het gevoelblok: tweede beeld aan de andere kant, anders kijkt de pagina
+   twee keer dezelfde kant op. */
+.feel .split{margin-bottom:58px}
+.feel .split:last-child{margin-bottom:0}
+.feel .split p{font-size:17px;line-height:1.72}
+.feel .split .btn{margin-top:10px}
+.rev-split .split-img{order:2}
+
+@media (max-width:900px){
+  .rev-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .rev img{height:260px}
+  .rev-split .split-img{order:-1}
+  .feel .split{margin-bottom:44px}
+}
 
 /* ---------- BOOKING ---------- */
 .book{background:var(--ink);color:#fff}
@@ -265,9 +292,20 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
         letter-spacing:.5px;color:#9a9a9a;text-decoration:none;border:1px solid transparent;transition:.2s}
 .lang a:hover{color:#fff;border-color:rgba(255,255,255,.25)}
 .lang a.on{color:#fff;background:rgba(255,107,53,.18);border-color:rgba(255,107,53,.55)}
+/* Op de telefoon staat de taalkeuze NAAST de hamburger, niet erin.
+   Wie de site liever in het Catalaans of Spaans leest hoeft daar geen
+   menu voor te openen — dat kost bezoekers die niet weten dat het bestaat. */
 @media (max-width:768px){
-  .lang{margin:14px 24px 0;justify-content:center}
-  .lang a{flex:1;text-align:center;padding:11px 10px;border:1px solid rgba(255,255,255,.15)}
+  .nav-wrap{gap:6px;padding:11px 14px;flex-wrap:nowrap}
+  .logo{font-size:16px;min-width:0;flex-shrink:1}
+  .logo small{font-size:9px;letter-spacing:1.6px}
+  .lang{gap:2px;margin:0;flex-shrink:0}
+  .lang a{padding:6px 7px;font-size:11.5px;letter-spacing:.3px;border:1px solid rgba(255,255,255,.16)}
+  .nav-toggle{flex-shrink:0;padding:8px 0 8px 4px}
+}
+@media (max-width:360px){
+  .logo{font-size:14.5px}
+  .lang a{padding:6px 5px;font-size:11px}
 }
 
 /* ── prijskaarten: 1 uur en 2 uur ─────────────────────────────── */
@@ -279,3 +317,61 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
            padding:5px 14px;border-radius:20px;white-space:nowrap}
 .btn-alt{background:transparent!important;border:2px solid var(--orange)!important;color:var(--orange)!important}
 .btn-alt:hover{background:var(--orange)!important;color:#fff!important}
+
+/* ══════════════════════════════════════════════════════════════
+   LANDINGSPAGINA v7 — kort houden, één doel: een bericht sturen
+   ══════════════════════════════════════════════════════════════ */
+
+/* Er is geen menu meer op de landingspagina. Alleen logo, WhatsApp en taal:
+   elke extra link is een uitgang, en we willen maar één uitgang. */
+.hdr-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;
+        box-shadow:0 4px 14px rgba(37,211,102,.28);padding:9px 16px;font-size:14px;
+        margin-left:auto;white-space:nowrap}
+.hdr-wa:hover{background:#1eb855}
+.hdr-wa svg{flex:none}
+.nav-wrap .lang{margin-left:14px}
+
+.btn-wa{background:#25d366;box-shadow:0 8px 26px rgba(37,211,102,.28);
+        display:inline-flex;align-items:center;gap:11px}
+.btn-wa:hover{background:#1eb855}
+.btn-wa svg{flex:none}
+
+/* Het hele aanbod in drie kaartjes. Wie meer wil weten klikt door. */
+.kort{background:#fff}
+.kort-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kort-card{background:var(--bg-soft);border-radius:12px;padding:30px 28px;
+           border-top:4px solid var(--orange)}
+.kort-card h3{font-size:19px;font-weight:800;margin-bottom:12px}
+.kort-card p{color:var(--grey);font-size:16px;line-height:1.68}
+.kort-meer{text-align:center;margin-top:34px;color:var(--grey);font-size:16px}
+.kort-meer a{color:var(--orange);font-weight:700;text-decoration:none;white-space:nowrap}
+.kort-meer a:hover{text-decoration:underline}
+
+.field-wide{grid-column:span 1}
+.form-klein{margin-top:14px;text-align:center;font-size:13.5px;color:#8e8e8e}
+.book-alt{margin-top:20px}
+.wa-foot{display:inline-block;color:#25d366!important;font-weight:700}
+
+/* ---------- INFOPAGINA ---------- */
+.info-top{background:var(--ink);color:#fff;padding:52px 0 46px}
+.info-top h1{font-family:'Montserrat',sans-serif;font-size:clamp(30px,4.6vw,44px);
+             font-weight:900;letter-spacing:-1px;margin:14px 0 16px;color:#fff}
+.info-top .section-intro{color:#b4b4b4;max-width:640px;margin-bottom:0}
+.terug{color:var(--orange);text-decoration:none;font-weight:700;font-size:15px}
+.terug:hover{text-decoration:underline}
+.incl-wrap{margin-top:44px;background:#fff;border-radius:12px;padding:32px 30px;
+           box-shadow:0 4px 16px rgba(0,0,0,.06)}
+
+@media (max-width:900px){
+  .kort-grid{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .hdr-wa{padding:8px 12px;font-size:13px;gap:6px}
+  .nav-wrap .lang{margin-left:8px}
+  .frow{grid-template-columns:1fr;gap:0}
+  .info-top{padding:40px 0 36px}
+}
+@media (max-width:400px){
+  .hdr-wa span{display:none}
+  .hdr-wa{padding:8px 10px}
+}

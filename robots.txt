@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /thanks.html
 Disallow: /es/gracias.html
+Disallow: /ca/gracies.html
 
 Sitemap: https://surrontours.com/sitemap.xml
