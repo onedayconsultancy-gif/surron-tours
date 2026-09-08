@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/style.css?v=14">
+<link rel="stylesheet" href="/style.css?v=15">
 </head>
 <body>
 
@@ -111,15 +111,35 @@
 <section class="beeld">
   <div class="container">
     <h2 class="section-title beeld-titel">What it looks like out there.</h2>
+
+    <figure class="rit">
+      <div class="rit-doos">
+        <video poster="/video/poster.jpg" muted loop playsinline preload="none"
+               width="720" height="1280" aria-label="Eleven seconds on the estate at sunset — riders on the track, the vineyards, the valley." data-rit>
+          <source src="/video/rit.mp4" type="video/mp4">
+          <source src="/video/rit.webm" type="video/webm">
+        </video>
+        <button class="rit-geluid" type="button"
+                data-aan="Sound on" data-uit="Sound off"
+                aria-label="Sound on">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+            <path class="rit-streep" d="M17 8l5 8M22 8l-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+      <figcaption>Put the sound on.</figcaption>
+    </figure>
+
     <div class="foto-slider rev-slider" data-slider>
       <div class="foto-track slider-track" tabindex="0">
         <figure class="foto" data-slide>
-          <img src="/img/feel-trail.jpg" alt="Two riders stopped on a trail through the scrub on the private estate near Tarragona" loading="lazy">
-          <figcaption>On the trail</figcaption>
-        </figure>
-        <figure class="foto" data-slide>
           <img src="/img/fleet-three.jpg" alt="Three Surron Light Bee electric dirt bikes lined up on red earth, vines and pine forest behind" loading="lazy">
           <figcaption>One bike each</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/feel-trail.jpg" alt="Two riders stopped on a trail through the scrub on the private estate near Tarragona" loading="lazy">
+          <figcaption>On the trail</figcaption>
         </figure>
         <figure class="foto" data-slide>
           <img src="/img/vineyard-track.jpg" alt="Two electric dirt bikes on a red earth track running between the vines" loading="lazy">

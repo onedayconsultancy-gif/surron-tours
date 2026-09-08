@@ -533,3 +533,27 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
 }
 /* De beeldband: staande foto's mogen niet de halve pagina vullen. */
 .beeld-grid img{object-position:center 55%}
+
+/* ---------- RIT-VIDEO (v15) ---------- */
+/* Staand beeld, want het is met een telefoon geschoten en zo kijkt
+   iedereen er ook naar. Op een breed scherm binden we hem in, anders
+   vult één video de halve pagina. */
+.rit{margin:0 auto 34px;max-width:400px}
+.rit-doos{position:relative;border-radius:16px;overflow:hidden;background:#0d0d0d;
+          box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.rit-doos video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}
+.rit figcaption{text-align:center;margin-top:14px;font-size:15px;color:var(--grey)}
+/* Geluidsknop rechtsonder. Mag automatisch afspelen niet, dan neemt de
+   browser het over met zijn eigen balk en verbergt het script deze knop. */
+.rit-geluid{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:99px;
+            border:1px solid rgba(255,255,255,.28);background:rgba(12,12,12,.62);color:#fff;
+            display:flex;align-items:center;justify-content:center;cursor:pointer;
+            backdrop-filter:blur(6px);transition:background .2s}
+.rit-geluid:hover{background:rgba(12,12,12,.85)}
+.rit-geluid:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.rit-geluid.aan{background:var(--orange);border-color:var(--orange)}
+.rit-geluid.aan .rit-streep{display:none}
+@media(max-width:768px){
+  .rit{max-width:none;margin-bottom:28px}
+  .rit-doos{border-radius:14px}
+}

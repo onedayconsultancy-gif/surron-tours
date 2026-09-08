@@ -102,3 +102,58 @@ document.querySelectorAll('[data-slider]').forEach(function (slider) {
   } else { fotosNu(); start(); }
 });
 })();
+
+/* ─────────────────────────────────────────────────────────────
+   De rit-video. Speelt vanzelf zonder geluid zodra hij in beeld
+   komt en stopt weer als je hem voorbij scrolt — dat scheelt
+   batterij en data. Het geluid staat uit omdat elke browser dat
+   afdwingt; de knop zet het aan, want juist het geluid vertelt
+   het verhaal: er is geen motor te horen.
+   ───────────────────────────────────────────────────────────── */
+(function () {
+  var rustig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('video[data-rit]').forEach(function (v) {
+    var knop = v.parentElement.querySelector('.rit-geluid');
+
+    var heeftGespeeld = false;
+
+    // Alleen als afspelen echt niet lukt zetten we de knoppenbalk aan.
+    // Eén keer gelukt is genoeg bewijs: daarna nooit meer, anders
+    // verschijnt de balk alsnog bij het terugscrollen.
+    function terugval() {
+      if (heeftGespeeld) return;
+      v.controls = true;
+      v.preload = 'metadata';
+      // De browser toont nu zijn eigen knoppen, inclusief geluid. Onze
+      // eigen knop zou daar bovenop staan, dus die halen we weg.
+      if (knop) knop.hidden = true;
+    }
+    function speel() {
+      if (v.preload === 'none') v.preload = 'auto';
+      var p = v.play();
+      if (p && p.then) p.then(function () { heeftGespeeld = true; }, terugval);
+      else heeftGespeeld = true;
+    }
+
+    if (rustig) {                       // niet vanzelf bewegen
+      v.controls = true;
+      v.preload = 'metadata';
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) speel();
+        else if (!v.paused) v.pause();
+      }, { threshold: 0.4 }).observe(v);
+    } else {
+      terugval();
+    }
+
+    if (!knop) return;
+    knop.addEventListener('click', function () {
+      v.muted = !v.muted;
+      knop.classList.toggle('aan', !v.muted);
+      var t = v.muted ? knop.dataset.aan : knop.dataset.uit;
+      knop.setAttribute('aria-label', t);
+      if (!v.muted && v.paused) { var q = v.play(); if (q && q.catch) q.catch(function () {}); }
+    });
+  });
+})();
