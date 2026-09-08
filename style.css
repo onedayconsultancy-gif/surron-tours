@@ -538,7 +538,9 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
 /* Staand beeld, want het is met een telefoon geschoten en zo kijkt
    iedereen er ook naar. Op een breed scherm binden we hem in, anders
    vult één video de halve pagina. */
-.rit{margin:0 auto 34px;max-width:400px}
+/* Op een laptop vulde een staande video van 9:16 bijna het hele scherm.
+   De hoogte is daarom gebonden aan het venster; de breedte volgt. */
+.rit{margin:0 auto 34px;max-width:min(400px,38vh)}
 .rit-doos{position:relative;border-radius:16px;overflow:hidden;background:#0d0d0d;
           box-shadow:0 14px 40px rgba(0,0,0,.18)}
 .rit-doos video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}

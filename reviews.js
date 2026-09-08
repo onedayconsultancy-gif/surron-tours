@@ -142,7 +142,9 @@ document.querySelectorAll('[data-slider]').forEach(function (slider) {
       new IntersectionObserver(function (e) {
         if (e[0].isIntersecting) speel();
         else if (!v.paused) v.pause();
-      }, { threshold: 0.4 }).observe(v);
+      // Lage drempel: het beeld is staand en kan hoger zijn dan het
+      // venster, dan wordt 40% zichtbaar nooit gehaald.
+      }, { threshold: 0.15 }).observe(v);
     } else {
       terugval();
     }
