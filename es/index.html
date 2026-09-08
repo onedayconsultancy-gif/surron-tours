@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/style.css?v=14">
+<link rel="stylesheet" href="/style.css?v=15">
 </head>
 <body>
 
@@ -111,15 +111,35 @@
 <section class="beeld">
   <div class="container">
     <h2 class="section-title beeld-titel">Cómo es por ahí fuera.</h2>
+
+    <figure class="rit">
+      <div class="rit-doos">
+        <video poster="/video/poster.jpg" muted loop playsinline preload="none"
+               width="720" height="1280" aria-label="Once segundos en la finca al atardecer — pilotos en la pista, los viñedos, el valle." data-rit>
+          <source src="/video/rit.mp4" type="video/mp4">
+          <source src="/video/rit.webm" type="video/webm">
+        </video>
+        <button class="rit-geluid" type="button"
+                data-aan="Activar sonido" data-uit="Silenciar"
+                aria-label="Activar sonido">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+            <path class="rit-streep" d="M17 8l5 8M22 8l-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+      <figcaption>Pon el sonido.</figcaption>
+    </figure>
+
     <div class="foto-slider rev-slider" data-slider>
       <div class="foto-track slider-track" tabindex="0">
         <figure class="foto" data-slide>
-          <img src="/img/feel-trail.jpg" alt="Dos personas paradas en una pista entre la maleza en la finca privada cerca de Tarragona" loading="lazy">
-          <figcaption>En la pista</figcaption>
-        </figure>
-        <figure class="foto" data-slide>
           <img src="/img/fleet-three.jpg" alt="Tres motos eléctricas Surron Light Bee en fila sobre tierra roja, con viñedo y pinar detrás" loading="lazy">
           <figcaption>Una para cada uno</figcaption>
+        </figure>
+        <figure class="foto" data-slide>
+          <img src="/img/feel-trail.jpg" alt="Dos personas paradas en una pista entre la maleza en la finca privada cerca de Tarragona" loading="lazy">
+          <figcaption>En la pista</figcaption>
         </figure>
         <figure class="foto" data-slide>
           <img src="/img/vineyard-track.jpg" alt="Dos motos eléctricas en un camino de tierra roja entre las viñas" loading="lazy">
