@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   Reviewschuiver voor surrontours.com
+   Schuiver voor surrontours.com (reviews en de fotostrip)
 
    Het vegen zelf doet de browser met scroll-snap; dit script zet
    alleen de bolletjes en pijlen aan als er echt iets te schuiven
@@ -12,13 +12,13 @@
 // Reviewschuiver. Het vegen doet de browser zelf (scroll-snap); dit
 // script zet alleen de bolletjes en pijlen aan als er iets te schuiven
 // valt, en houdt ze gelijk met waar je bent.
-document.querySelectorAll('[data-rev-slider]').forEach(function (slider) {
-  var spoor = slider.querySelector('.rev-track');
-  var dots  = slider.querySelector('.rev-dots');
+document.querySelectorAll('[data-slider]').forEach(function (slider) {
+  var spoor = slider.querySelector('.slider-track');
+  var dots  = slider.querySelector('.slider-dots');
   var knop  = dots ? [].slice.call(dots.children) : [];
-  var vorig = slider.querySelector('.rev-prev');
-  var volgend = slider.querySelector('.rev-next');
-  var kaarten = [].slice.call(spoor.querySelectorAll('.rev'));
+  var vorig = slider.querySelector('.slider-prev');
+  var volgend = slider.querySelector('.slider-next');
+  var kaarten = [].slice.call(spoor.querySelectorAll('[data-slide]'));
   var timer = null, aangeraakt = false;
   var rustig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
