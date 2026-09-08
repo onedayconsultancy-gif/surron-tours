@@ -410,3 +410,21 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
   .prakt-rij{grid-template-columns:1fr;gap:6px;padding:16px 0}
   .komen-rij{padding:14px 18px}
 }
+
+/* ---------- BEELDBAND + GEEN AUTO (v9) ---------- */
+/* Twee echte foto's op de landingspagina. Iemand die overweegt te komen
+   moet zien waar hij rijdt, niet alleen lezen dat het mooi is. */
+.beeld{padding:0;background:var(--bg-soft)}
+.beeld-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.beeld-grid img{width:100%;height:340px;object-fit:cover;display:block}
+@media(max-width:768px){
+  .beeld-grid{grid-template-columns:1fr}
+  .beeld-grid img{height:235px}
+}
+/* Het antwoord op "wij hebben geen auto" — de vraag waarop een stel in
+   Barcelona anders gewoon wegklikt. */
+.geen-auto{max-width:560px;margin:26px auto 0;background:var(--bg-soft);
+           border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.geen-auto b{display:block;font-family:'Montserrat',sans-serif;font-size:17px;
+             margin-bottom:8px;color:var(--ink)}
+.geen-auto p{margin:0;color:var(--grey);font-size:15.5px;line-height:1.62}
