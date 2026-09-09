@@ -27,7 +27,7 @@ WA_NUMMER = "34657390564"
 WA_WEERGAVE = "+34 657 390 564"
 FORM_MAIL = "chimobous01@gmail.com"
 BASIS = "https://surrontours.com"
-CSS = "/style.css?v=18"
+CSS = "/style.css?v=19"
 PIXEL = "/pixel.js?v=2"
 VID = "?v=2"             # ophogen bij een nieuwe film, anders blijft de oude 30 dagen in de cache
 
@@ -129,8 +129,8 @@ T["en"] = dict(
     cta_wa="Ask which dates are free",
     cta_form="Or send the form",
     cta_noot="Usually answered within the hour.",
-    trust=["From €175", "Pickup available", "Ages 12+", "No licence needed"],
-    feiten=[("€175", "two hours"), ("€100", "one hour"),
+    trust=["From €175 p.p.", "No minimum group", "Ages 12+", "No licence needed"],
+    feiten=[("€175", "per person, two hours"), ("€100", "per person, one hour"),
             ("200 ha", "private estate"), ("0", "licence needed")],
 
     video_alt="Eleven seconds on the estate at sunset — riders on the track, the vineyards, the valley.",
@@ -192,7 +192,8 @@ T["en"] = dict(
          "Nothing. No licence, no experience, no kit — helmet, body armour, gloves and the "
          "bike are all here waiting. From 12 years old."),
         ("What it costs",
-         "€100 for one hour, €175 for two — the two-hour ride is the one both reviews below "
+         "€100 per person for one hour, €175 for two — the two-hour ride is the one both "
+         "reviews below "
          "are talking about. Everything included. You pay on the day and can cancel free up "
          "to 24 hours before."),
     ],
@@ -280,8 +281,8 @@ T["es"] = dict(
     cta_wa="Pregunta qué días quedan libres",
     cta_form="O rellena el formulario",
     cta_noot="Te contestamos en menos de una hora.",
-    trust=["Desde 175 €", "Solo tu grupo", "Desde los 12 años", "Sin carnet"],
-    feiten=[("175 €", "dos horas"), ("100 €", "una hora"),
+    trust=["Desde 175 €/persona", "Sin mínimo de personas", "Desde los 12 años", "Sin carnet"],
+    feiten=[("175 €", "por persona, dos horas"), ("100 €", "por persona, una hora"),
             ("200 ha", "finca privada"), ("0", "carnet necesario")],
 
     video_alt="Once segundos en la finca al atardecer — pilotos en la pista, los viñedos, el valle.",
@@ -351,7 +352,8 @@ T["es"] = dict(
          "Nada. Ni carnet, ni experiencia, ni equipo — casco, peto, guantes y la moto ya "
          "están aquí esperándote. Desde los 12 años."),
         ("Cuánto cuesta",
-         "100 € una hora, 175 € dos horas — la de dos horas es de la que hablan las dos "
+         "100 € por persona una hora, 175 € dos horas — la de dos horas es de la que hablan "
+         "las dos "
          "reseñas de abajo. Todo incluido. Se paga el mismo día y puedes cancelar gratis "
          "hasta 24 horas antes."),
     ],
@@ -437,8 +439,8 @@ T["ca"] = dict(
     cta_wa="Pregunta quins dies queden lliures",
     cta_form="O omple el formulari",
     cta_noot="Et contestem en menys d'una hora.",
-    trust=["Des de 100 €", "Obert tot l'any", "A partir dels 12 anys", "Sense carnet"],
-    feiten=[("100 €", "una hora"), ("175 €", "dues hores"),
+    trust=["Des de 100 €/persona", "Sense mínim de persones", "A partir dels 12 anys", "Sense carnet"],
+    feiten=[("100 €", "per persona, una hora"), ("175 €", "per persona, dues hores"),
             ("200 ha", "finca privada"), ("0", "carnet necessari")],
 
     video_alt="Onze segons a la finca al capvespre — pilots a la pista, les vinyes, la vall.",
@@ -507,7 +509,8 @@ T["ca"] = dict(
          "Res. Ni carnet, ni experiència, ni equip — casc, pitrera, guants i la moto ja són "
          "aquí esperant-te. A partir dels 12 anys."),
         ("Quant costa",
-         "100 € una hora, 175 € dues hores — la de dues hores és de la que parlen les dues "
+         "100 € per persona una hora, 175 € dues hores — la de dues hores és de la que parlen "
+         "les dues "
          "ressenyes de sota. Tot inclòs. Es paga el mateix dia i pots anul·lar gratis fins "
          "a 24 hores abans."),
     ],

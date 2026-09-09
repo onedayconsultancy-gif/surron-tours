@@ -35,13 +35,31 @@ INFO["en"] = dict(
             "other group waiting for their turn.",
     feel_alt="Two riders on Surron electric dirt bikes at sunset on the private estate near Tarragona",
 
-    bike_h="The bike: a Surron Light Bee.",
-    bike_p="Fully electric, near-silent, and about 55 kg — roughly a third of a petrol "
-           "enduro bike. No clutch, no gears: you twist the throttle and go. Every rider "
-           "is on the same bike; we set the power mode to match you. <b>Eco</b> if you "
-           "have never ridden, <b>Sport</b> if you know what you are doing, and your "
-           "guide can switch you over mid-ride once you are comfortable.",
-    bike_alt="Surron Light Bee electric dirt bike parked in an olive grove near Tarragona at sunset",
+    bike_h="The bike: a 2025 Surron Light Bee.",
+    bike_p="Current-model 2025 bikes, not worn-out rentals. Fully electric, near-silent "
+           "and about 55 kg — roughly a third of a petrol enduro bike. No clutch, no gears: "
+           "you twist the throttle and go. Every rider is on the same bike; we set the "
+           "power mode to match you. <b>Eco</b> if you have never ridden, <b>Sport</b> if "
+           "you know what you are doing, and your guide can switch you over mid-ride once "
+           "you are comfortable.",
+    bike_alt="Three Surron Light Bee electric dirt bikes lined up on the private estate near Tarragona, vines and pine forest behind",
+
+    komen_h="Getting here.",
+    komen_p="We are on a private estate in the Tarragona countryside, in Catalonia. "
+            "Because it is private land we don't publish the address — you get the exact "
+            "location, a map pin and driving directions as soon as your date is confirmed. "
+            "There is parking on site.",
+    komen=[("Barcelona", "about 1 hour by car"),
+           ("Tarragona", "about 30 minutes"),
+           ("Reus", "about 40 minutes"),
+           ("Salou", "about 40 minutes")],
+    komen_noot="Drive times are for a normal day. Leave a little extra in July and August, "
+               "and plan to arrive 10 minutes before your slot so we can get you kitted up. "
+               "Fifteen minutes late is not a problem — just send us a message.",
+    komen_geen_auto_h="No car?",
+    komen_geen_auto="We can come and pick you up. It costs extra on top of the ride and it "
+                    "adds a bit of travel time, so message us with where you are staying "
+                    "and we'll tell you what it would be before you book anything.",
 
     kaarten=[
         ("Who can ride", [
@@ -67,13 +85,20 @@ INFO["en"] = dict(
         ("Practical details", [
             "<b>Location:</b> private estate in the Tarragona countryside — exact address "
             "and directions sent when your booking is confirmed",
-            "<b>Duration:</b> 1 hour riding, allow around 1.5 hours on site including "
-            "briefing and kitting up",
-            "<b>Availability:</b> seven days a week, weekends book up first",
+            "<b>Duration:</b> 1 hour riding (€100 per person) or 2 hours (€175 per person) "
+            "— allow about half an "
+            "hour on top for briefing and kitting up",
+            "<b>Times:</b> seven days a week, and we build the time around you — mornings, "
+            "afternoons or at sunset. Weekends book up first",
             "<b>Languages:</b> English, Español, Nederlands, Català",
-            "<b>Payment:</b> on the day — no deposit required",
+            "<b>Payment:</b> €50 to hold your date, the rest in cash on the day",
             "<b>Cancellation:</b> free up to 24 hours before your slot",
-            "<b>Groups:</b> small groups and private bookings welcome — just ask",
+            "<b>Every ride is private:</b> you ride with your own group only — we never "
+            "put you together with people you don't know",
+            "<b>Group size:</b> there is no minimum — riding on your own is fine and costs "
+            "the same per person. For bigger groups we bring in extra bikes if you tell "
+            "us your numbers in advance",
+            "<b>Not riding:</b> anyone who would rather watch is welcome to come along",
         ]),
     ],
 
@@ -88,6 +113,10 @@ INFO["en"] = dict(
 
     faq_h="Questions we get.",
     faq=[
+        ("Is there a minimum number of people?",
+         "No. One rider on their own is fine, and it costs the same per person as it would "
+         "in a group. The ride is private either way — you are never put together with "
+         "people you don't know."),
         ("Do I need a driving licence?",
          "No. All the riding happens on private property, so no licence of any kind is "
          "required — car, motorbike or otherwise."),
@@ -110,17 +139,36 @@ INFO["en"] = dict(
          "Helmet, body armour for chest and back, elbow pads, knee pads and gloves. All "
          "included in the price. If you'd rather use your own helmet or armour, you're "
          "welcome to."),
+        ("Will we be riding with other people?",
+         "No. Every ride belongs to your booking alone. Whether you come on your own, as a "
+         "couple or with a group of friends, the only people out there are you and your "
+         "guide. We never put two bookings together, and you never share the estate with a "
+         "group you don't know."),
         ("Can we come as a group?",
          "Yes. Small groups, families, stag and hen groups and company outings all work "
          "well. Because we can set a different power mode for each rider, mixed-ability "
-         "groups genuinely can ride together. Tell us how many you are and we'll sort the "
-         "timing."),
+         "groups genuinely can ride together. For bigger groups we bring in extra bikes — "
+         "we just need to know your numbers in advance, so message us early with your dates "
+         "and we'll sort the timing."),
+        ("We have no car. Can we still come?",
+         "Yes — we can come and pick you up. It costs extra on top of the ride and it adds "
+         "some travel time, so message us with where you are staying and we'll tell you "
+         "what it would be before you commit to anything."),
+        ("What time can we ride?",
+         "Whenever suits you. We run seven days a week and build the slot around your day — "
+         "morning, afternoon or at sunset, which is when the estate looks the way it does "
+         "in the photos. Tell us the day and roughly what time and we'll come back with "
+         "what's open."),
+        ("Can someone come along without riding?",
+         "Yes. If one of you would rather watch than ride, that's completely fine — come "
+         "along, take the photos, and see the estate."),
         ("What happens if it rains?",
          "Light rain is usually fine and honestly good fun. If the weather makes it unsafe "
          "we'll call you and move your slot — you never lose your money over weather."),
         ("How do I pay, and can I cancel?",
-         "You pay on the day. Nothing up front, no deposit. Free cancellation up to 24 "
-         "hours before your slot."),
+         "€50 holds your date — we arrange that when we confirm — and the rest is cash on "
+         "the day. Free cancellation up to 24 hours before your slot, and the €50 comes "
+         "straight back to you."),
         ("Where exactly are you?",
          "On a private estate in the countryside of Tarragona province, Catalonia. Because "
          "it's private property we send the exact address, map pin and driving directions "
@@ -159,14 +207,30 @@ INFO["es"] = dict(
             "otro grupo esperando turno.",
     feel_alt="Dos personas en motos eléctricas Surron al atardecer en la finca privada cerca de Tarragona",
 
-    bike_h="La moto: una Surron Light Bee.",
-    bike_p="Cien por cien eléctrica, casi silenciosa y de unos 55 kg — aproximadamente un "
-           "tercio de lo que pesa una enduro de gasolina. Sin embrague y sin marchas: giras "
-           "el puño y sales. Todo el mundo va en la misma moto; lo único que cambiamos es "
-           "el modo de potencia. <b>Eco</b> si no has montado nunca, <b>Sport</b> si sabes "
-           "lo que haces, y el guía te lo puede cambiar a mitad de ruta cuando ya vayas "
-           "cómodo.",
-    bike_alt="Moto eléctrica Surron Light Bee aparcada en un olivar cerca de Tarragona al atardecer",
+    bike_h="La moto: una Surron Light Bee de 2025.",
+    bike_p="Motos del modelo 2025, no motos de alquiler gastadas. Cien por cien "
+           "eléctricas, casi silenciosas y de unos 55 kg — aproximadamente un tercio de lo "
+           "que pesa una enduro de gasolina. Sin embrague y sin marchas: giras el puño y "
+           "sales. Todo el mundo va en la misma moto; lo único que cambiamos es el modo de "
+           "potencia. <b>Eco</b> si no has montado nunca, <b>Sport</b> si sabes lo que "
+           "haces, y el guía te lo puede cambiar a mitad de ruta cuando ya vayas cómodo.",
+    bike_alt="Tres motos eléctricas Surron Light Bee en fila en la finca privada cerca de Tarragona, con viñedo y pinar detrás",
+
+    komen_h="Cómo llegar.",
+    komen_p="Estamos en una finca privada en el campo de Tarragona. Como es terreno "
+            "privado no publicamos la dirección — te mandamos la ubicación exacta, el punto "
+            "en el mapa y cómo llegar en cuanto confirmamos tu día. Hay sitio para aparcar.",
+    komen=[("Barcelona", "una hora en coche aproximadamente"),
+           ("Tarragona", "unos 30 minutos"),
+           ("Reus", "unos 40 minutos"),
+           ("Salou", "unos 40 minutos")],
+    komen_noot="Son tiempos de un día normal. En julio y agosto deja un poco de margen, y "
+               "cuenta con llegar 10 minutos antes de tu hora para equiparte con calma. "
+               "Quince minutos tarde no pasa nada — solo mándanos un mensaje.",
+    komen_geen_auto_h="¿Sin coche?",
+    komen_geen_auto="Podemos ir a buscarte. Tiene un coste aparte de la ruta y añade algo "
+                    "de viaje, así que escríbenos diciendo dónde estás y te decimos cuánto "
+                    "sería antes de que reserves nada.",
 
     kaarten=[
         ("Quién puede conducir", [
@@ -192,13 +256,20 @@ INFO["es"] = dict(
         ("Detalles prácticos", [
             "<b>Ubicación:</b> finca privada en el campo de Tarragona — te mandamos la "
             "dirección exacta y cómo llegar al confirmar la reserva",
-            "<b>Duración:</b> 1 hora conduciendo; cuenta con una hora y media en total "
-            "incluyendo briefing y equiparse",
-            "<b>Disponibilidad:</b> siete días a la semana; los fines de semana se llenan antes",
+            "<b>Duración:</b> 1 hora conduciendo (100 € por persona) o 2 horas (175 € por "
+            "persona) — cuenta con "
+            "media hora más para el briefing y equiparse",
+            "<b>Horarios:</b> siete días a la semana, y la hora la montamos contigo — por "
+            "la mañana, por la tarde o al atardecer. Los fines de semana se llenan antes",
             "<b>Idiomas:</b> Español, Català, English, Nederlands",
-            "<b>Pago:</b> el mismo día — sin señal ni anticipo",
+            "<b>Pago:</b> 50 € para reservar el día, el resto en efectivo el mismo día",
             "<b>Cancelación:</b> gratis hasta 24 horas antes de tu hora",
-            "<b>Grupos:</b> grupos pequeños y reservas privadas, sin problema — pregúntanos",
+            "<b>Cada ruta es privada:</b> ruedas solo con tu grupo — nunca te juntamos con "
+            "gente que no conoces",
+            "<b>Tamaño del grupo:</b> no hay mínimo — puedes venir tú solo y cuesta lo "
+            "mismo por persona. Para los grupos grandes traemos motos de más si nos "
+            "dices cuántos sois con antelación",
+            "<b>Sin conducir:</b> quien prefiera mirar puede venir igualmente a acompañar",
         ]),
     ],
 
@@ -213,6 +284,10 @@ INFO["es"] = dict(
 
     faq_h="Lo que nos suelen preguntar.",
     faq=[
+        ("¿Hay un mínimo de personas por grupo?",
+         "No. Puedes venir tú solo y cuesta lo mismo por persona que si vinierais varios. "
+         "La ruta es privada en cualquier caso — nunca te juntamos con gente que no "
+         "conoces."),
         ("¿Hace falta carnet de conducir?",
          "No. Todo se hace en terreno privado, así que no se necesita ningún carnet — ni de "
          "coche ni de moto."),
@@ -235,18 +310,37 @@ INFO["es"] = dict(
         ("¿Qué equipo de protección ponéis vosotros?",
          "Casco, peto para pecho y espalda, coderas, rodilleras y guantes. Todo incluido en "
          "el precio. Si prefieres usar tu propio casco o peto, adelante."),
+        ("¿Vamos a rodar con otra gente?",
+         "No. Cada ruta es solo para tu reserva. Vengas solo, en pareja o con un grupo de "
+         "amigos, los únicos que estáis ahí fuera sois vosotros y el guía. Nunca juntamos "
+         "dos reservas en una misma ruta, y nunca compartes la finca con un grupo que no "
+         "conoces."),
         ("¿Podemos venir en grupo?",
          "Sí. Grupos pequeños, familias, despedidas y salidas de empresa funcionan muy "
          "bien. Como podemos poner un modo de potencia distinto a cada piloto, los grupos "
-         "con niveles mezclados sí pueden rodar juntos de verdad. Dinos cuántos sois y "
-         "organizamos el horario."),
+         "con niveles mezclados sí pueden rodar juntos de verdad. Para grupos grandes "
+         "traemos motos de más — solo necesitamos saber cuántos sois con antelación, así "
+         "que escríbenos pronto con vuestras fechas y cuadramos el horario."),
+        ("No tenemos coche. ¿Podemos venir igual?",
+         "Sí — podemos ir a buscaros. Tiene un coste aparte de la ruta y añade algo de "
+         "viaje, así que escríbenos diciendo dónde estáis y os decimos cuánto sería antes "
+         "de que os comprometáis a nada."),
+        ("¿A qué hora se puede rodar?",
+         "Cuando te vaya bien. Abrimos siete días a la semana y montamos la hora alrededor "
+         "de tu día — por la mañana, por la tarde o al atardecer, que es cuando la finca se "
+         "ve como en las fotos. Dinos el día y más o menos la hora y te decimos qué queda "
+         "libre."),
+        ("¿Puede venir alguien sin conducir?",
+         "Sí. Si uno de vosotros prefiere mirar en vez de conducir, ningún problema — que "
+         "venga, haga las fotos y vea la finca."),
         ("¿Qué pasa si llueve?",
          "Con lluvia floja se rueda perfectamente y hasta es divertido. Si el tiempo lo "
          "hace inseguro te llamamos y te cambiamos la hora — nunca pierdes el dinero por el "
          "tiempo."),
         ("¿Cómo se paga y puedo cancelar?",
-         "Se paga el mismo día. Nada por adelantado, sin señal. Cancelación gratis hasta 24 "
-         "horas antes de tu hora."),
+         "50 € para reservar tu día — lo organizamos al confirmar — y el resto en efectivo "
+         "el mismo día. Cancelación gratis hasta 24 horas antes de tu hora, y los 50 € te "
+         "vuelven enteros."),
         ("¿Dónde estáis exactamente?",
          "En una finca privada en el campo de la provincia de Tarragona. Como es terreno "
          "privado, te mandamos la dirección exacta, la ubicación y cómo llegar en cuanto "
