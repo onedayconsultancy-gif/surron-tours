@@ -559,3 +559,9 @@ footer{background:#080808;color:#9a9a9a;padding:56px 0 30px;font-size:14.5px}
   .rit{max-width:none;margin-bottom:28px}
   .rit-doos{border-radius:14px}
 }
+
+/* ---------- GERUSTSTELLING BIJ HET FORMULIER (v17) ---------- */
+/* De vraag "moeten we dan met een grote groep rijden?" komt precies hier
+   op, bij het invullen van het aantal. Dus staat het antwoord ernaast. */
+.veld-hint{display:block;font-family:'Open Sans',system-ui,sans-serif;font-weight:400;
+           font-size:12.5px;letter-spacing:0;text-transform:none;color:#9a9a9a;margin-top:3px}
