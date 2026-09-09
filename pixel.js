@@ -18,17 +18,23 @@
            document.querySelector('script[src*="pixel.js"]');
   var extraEvent = me ? me.getAttribute('data-event') : null;
 
-  var isES = (document.documentElement.lang || 'en').toLowerCase().indexOf('es') === 0;
+  var taal = (document.documentElement.lang || 'en').toLowerCase().slice(0, 2);
 
-  var T = isES ? {
-    text: 'Usamos cookies de medición para saber qué anuncios traen reservas. Nada más.',
-    yes: 'Aceptar',
-    no: 'Rechazar'
-  } : {
-    text: 'We use measurement cookies to see which ads bring bookings. Nothing else.',
-    yes: 'Accept',
-    no: 'Decline'
+  var TEKSTEN = {
+    es: {
+      text: 'Usamos cookies de medición para saber qué anuncios traen reservas. Nada más.',
+      yes: 'Aceptar', no: 'Rechazar'
+    },
+    ca: {
+      text: 'Fem servir galetes de mesura per saber quins anuncis porten reserves. Res més.',
+      yes: 'Acceptar', no: 'Rebutjar'
+    },
+    en: {
+      text: 'We use measurement cookies to see which ads bring bookings. Nothing else.',
+      yes: 'Accept', no: 'Decline'
+    }
   };
+  var T = TEKSTEN[taal] || TEKSTEN.en;
 
   function loadPixel() {
     if (window.fbq) return;
@@ -44,22 +50,44 @@
     fbq('init', PIXEL_ID);
     fbq('track', 'PageView');
     if (extraEvent) fbq('track', extraEvent);
-    watchWhatsApp();
   }
 
-  /* Klik op een WhatsApp-knop telt als Contact. Zonder dit is iedereen
-     die via WhatsApp boekt onzichtbaar voor Meta: het gesprek zelf mag
-     in Europa niet gemeten worden, de klik ernaartoe wel. */
-  var waBound = false;
-  function watchWhatsApp() {
-    if (waBound) return;
-    waBound = true;
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
-      if (!a || !window.fbq) return;
-      fbq('track', 'Contact', { content_name: 'whatsapp_button' });
-    }, true);
+  /* ── WhatsApp-klik = Contact ───────────────────────────────────
+     Het gesprek zelf mag Meta niet zien; de klik ernaartoe wel, en
+     wie klikt stuurt vrijwel altijd ook. Elke wa.me-knop op de site
+     heeft target="_blank", dus de pagina blijft staan en de pixel
+     krijgt gegarandeerd de tijd om af te vuren.
+
+     De luisteraar hangt aan document en wordt meteen gezet, niet pas
+     bij het laden van de pixel: zo maakt de volgorde niet uit. Eén
+     Contact per bezoek — iemand die drie knoppen aanraakt is één
+     geïnteresseerde, geen drie, en drie tellingen sturen Meta's
+     optimalisatie de verkeerde kant op. */
+  var CONTACT_KEY = 'st_contact';
+  function alGeteld() {
+    try { return sessionStorage.getItem(CONTACT_KEY) === '1'; } catch (e) { return false; }
   }
+  function noteer() {
+    try { sessionStorage.setItem(CONTACT_KEY, '1'); } catch (e) {}
+  }
+
+  function waLink(el) {
+    /* geen element.closest() gebruiken: op een <svg> binnen de knop
+       bestaat die in oudere Safari niet */
+    while (el && el !== document) {
+      if (el.tagName && el.tagName.toLowerCase() === 'a' &&
+          (el.getAttribute('href') || '').indexOf('wa.me') !== -1) return el;
+      el = el.parentNode;
+    }
+    return null;
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!waLink(e.target)) return;
+    if (!window.fbq || alGeteld()) return;
+    noteer();
+    fbq('track', 'Contact', { content_name: 'whatsapp_button' });
+  }, true);
 
   function saveAndGo(value) {
     try { localStorage.setItem(KEY, value); } catch (e) {}
