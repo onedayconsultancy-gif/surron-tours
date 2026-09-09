@@ -22,15 +22,15 @@
 
   var TEKSTEN = {
     es: {
-      text: 'Usamos cookies de medición para saber qué anuncios traen reservas. Nada más.',
+      text: 'Cookies solo para ver qué anuncios funcionan.',
       yes: 'Aceptar', no: 'Rechazar'
     },
     ca: {
-      text: 'Fem servir galetes de mesura per saber quins anuncis porten reserves. Res més.',
+      text: 'Galetes només per veure quins anuncis funcionen.',
       yes: 'Acceptar', no: 'Rebutjar'
     },
     en: {
-      text: 'We use measurement cookies to see which ads bring bookings. Nothing else.',
+      text: 'Cookies only to see which ads work.',
       yes: 'Accept', no: 'Decline'
     }
   };
@@ -93,6 +93,7 @@
     try { localStorage.setItem(KEY, value); } catch (e) {}
     var bar = document.getElementById('st-consent');
     if (bar) bar.parentNode.removeChild(bar);
+    document.body.style.paddingBottom = '';
     if (value === 'yes') loadPixel();
   }
 
@@ -117,7 +118,13 @@
       '#st-consent .y:hover{background:#e2551f}' +
       '#st-consent .n{background:transparent;color:#9a9a9a;border:1px solid rgba(255,255,255,.22)}' +
       '#st-consent .n:hover{color:#fff;border-color:rgba(255,255,255,.5)}' +
-      '@media(max-width:640px){#st-consent{gap:10px;padding:14px 16px}#st-consent button{flex:1}}';
+      /* Op een kleine telefoon stond de balk precies over de WhatsApp-knop
+         in de hero. Daarom hier één regel, kleinere knoppen, en onderaan
+         de pagina evenveel ruimte terug zodat er niets achter verdwijnt. */
+      '@media(max-width:640px){#st-consent{gap:8px;padding:10px 12px;font-size:12.5px;' +
+      'line-height:1.35;flex-wrap:nowrap;text-align:left}' +
+      '#st-consent p{flex:1 1 auto;min-width:0}' +
+      '#st-consent button{flex:0 0 auto;font-size:12.5px;padding:9px 14px;border-radius:5px}}';
     document.head.appendChild(css);
 
     var bar = document.createElement('div');
@@ -136,6 +143,15 @@
 
     bar.appendChild(p); bar.appendChild(yes); bar.appendChild(no);
     document.body.appendChild(bar);
+
+    /* De balk staat vast onderaan. Zonder deze ruimte ligt hij over de
+       knop waar het hele bezoek om draait. */
+    document.body.style.paddingBottom = bar.offsetHeight + 'px';
+    window.addEventListener('resize', function () {
+      if (document.getElementById('st-consent')) {
+        document.body.style.paddingBottom = bar.offsetHeight + 'px';
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
