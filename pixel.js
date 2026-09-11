@@ -52,6 +52,26 @@
     if (extraEvent) fbq('track', extraEvent);
   }
 
+  /* ── cookieloze teller ─────────────────────────────────────────
+     De pixel laadt pas na toestemming. Wie de balk negeert en meteen
+     op WhatsApp tikt levert dus géén enkel Meta-event op, terwijl dat
+     juist je warmste bezoeker is. Deze teller telt die wel: geen
+     cookie, geen opslag op het apparaat, geen identificatie — alleen
+     een streepje op de server. Uitlezen in de Railway-logs.
+
+     tel('balk')      de balk is getoond
+     tel('ja')        toestemming gegeven
+     tel('nee')       geweigerd
+     tel('wa')        WhatsApp aangetikt mét toestemming
+     tel('wa-zonder') WhatsApp aangetikt zónder toestemming  ← het lek  */
+  function tel(soort) {
+    try {
+      var u = '/t?e=' + soort;
+      if (navigator.sendBeacon) navigator.sendBeacon(u);
+      else new Image().src = u + '&r=' + Math.random();
+    } catch (e) {}
+  }
+
   /* ── WhatsApp-klik = Contact ───────────────────────────────────
      Het gesprek zelf mag Meta niet zien; de klik ernaartoe wel, en
      wie klikt stuurt vrijwel altijd ook. Elke wa.me-knop op de site
@@ -63,12 +83,14 @@
      Contact per bezoek — iemand die drie knoppen aanraakt is één
      geïnteresseerde, geen drie, en drie tellingen sturen Meta's
      optimalisatie de verkeerde kant op. */
-  var CONTACT_KEY = 'st_contact';
-  function alGeteld() {
-    try { return sessionStorage.getItem(CONTACT_KEY) === '1'; } catch (e) { return false; }
-  }
-  function noteer() {
-    try { sessionStorage.setItem(CONTACT_KEY, '1'); } catch (e) {}
+  /* Twee losse merktekens: iemand die eerst zonder toestemming tikt en
+     daarna alsnog accepteert, moet zijn Contact nog kunnen opleveren. */
+  function eenmalig(sleutel) {
+    try {
+      if (sessionStorage.getItem(sleutel) === '1') return false;
+      sessionStorage.setItem(sleutel, '1');
+    } catch (e) {}
+    return true;
   }
 
   function waLink(el) {
@@ -84,12 +106,14 @@
 
   document.addEventListener('click', function (e) {
     if (!waLink(e.target)) return;
-    if (!window.fbq || alGeteld()) return;
-    noteer();
-    fbq('track', 'Contact', { content_name: 'whatsapp_button' });
+    if (eenmalig('st_wa')) tel(window.fbq ? 'wa' : 'wa-zonder');
+    if (window.fbq && eenmalig('st_contact')) {
+      fbq('track', 'Contact', { content_name: 'whatsapp_button' });
+    }
   }, true);
 
   function saveAndGo(value) {
+    tel(value === 'yes' ? 'ja' : 'nee');
     try { localStorage.setItem(KEY, value); } catch (e) {}
     var bar = document.getElementById('st-consent');
     if (bar) bar.parentNode.removeChild(bar);
@@ -143,6 +167,7 @@
 
     bar.appendChild(p); bar.appendChild(yes); bar.appendChild(no);
     document.body.appendChild(bar);
+    tel('balk');
 
     /* De balk staat vast onderaan. Zonder deze ruimte ligt hij over de
        knop waar het hele bezoek om draait. */

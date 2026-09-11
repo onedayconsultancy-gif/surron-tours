@@ -28,7 +28,7 @@ WA_WEERGAVE = "+34 657 390 564"
 FORM_MAIL = "chimobous01@gmail.com"
 BASIS = "https://surrontours.com"
 CSS = "/style.css?v=19"
-PIXEL = "/pixel.js?v=2"
+PIXEL = "/pixel.js?v=3"
 VID = "?v=2"             # ophogen bij een nieuwe film, anders blijft de oude 30 dagen in de cache
 
 HIER = os.path.dirname(os.path.abspath(__file__))
@@ -244,6 +244,9 @@ T["en"] = dict(
     f_aantal="How many of you", f_aantal_hint="Your group rides on its own",
     f_wanneer="Roughly when",
     f_wanneer_ph="Next weekend, or a weekday evening",
+    f_vind="How did you find us", f_vind_leeg="—",
+    f_vind_opties=["Instagram or Facebook", "Google", "A friend told me",
+                   "My hotel or campsite", "Somewhere else"],
     f_send="Send — and we'll reply with the free dates",
     f_klein="No payment, no obligation. We just reply with what's open.",
     book_vraag="Rather ask something first?",
@@ -403,6 +406,9 @@ T["es"] = dict(
     f_aantal="Cuántos sois", f_aantal_hint="Tu grupo rueda solo",
     f_wanneer="Más o menos cuándo",
     f_wanneer_ph="El finde que viene, o entre semana",
+    f_vind="Cómo nos has encontrado", f_vind_leeg="—",
+    f_vind_opties=["Instagram o Facebook", "Google", "Me lo dijo un amigo",
+                   "Mi hotel o camping", "De otra forma"],
     f_send="Enviar — y te decimos qué días quedan",
     f_klein="Sin pagar nada y sin compromiso. Solo te contestamos con lo que queda libre.",
     book_vraag="¿Prefieres preguntar antes?",
@@ -560,6 +566,9 @@ T["ca"] = dict(
     f_aantal="Quants sou", f_aantal_hint="El teu grup roda sol",
     f_wanneer="Més o menys quan",
     f_wanneer_ph="El cap de setmana vinent, o entre setmana",
+    f_vind="Com ens has trobat", f_vind_leeg="—",
+    f_vind_opties=["Instagram o Facebook", "Google", "M'ho va dir un amic",
+                   "El meu hotel o càmping", "D'una altra manera"],
     f_send="Enviar — i et diem quins dies queden",
     f_klein="Sense pagar res i sense compromís. Només et contestem amb el que queda lliure.",
     book_vraag="Prefereixes preguntar abans?",
@@ -782,6 +791,7 @@ def bouw_landing(taal):
     trust = "".join(f"<span>{x}</span>" for x in c["trust"])
     feiten = "".join(f'<div class="fact"><b>{a}</b><span>{b}</span></div>'
                      for a, b in c["feiten"])
+    vindopties = "".join(f'<option>{o}</option>' for o in c["f_vind_opties"])
     kort = "\n".join(f'''      <div class="kort-card">
         <h3>{t}</h3>
         <p>{p}</p>
@@ -1016,6 +1026,16 @@ def bouw_landing(taal):
           <div class="field field-wide">
             <label for="when">{c["f_wanneer"]}</label>
             <input id="when" type="text" name="When" placeholder="{c["f_wanneer_ph"]}">
+          </div>
+        </div>
+
+        <div class="frow">
+          <div class="field field-wide">
+            <label for="found">{c["f_vind"]}</label>
+            <select id="found" name="Found us">
+              <option value="">{c["f_vind_leeg"]}</option>
+              {vindopties}
+            </select>
           </div>
         </div>
 
