@@ -99,12 +99,43 @@ REVIEWS = [
               "del que faríem i li va encantar — per fi un pla que no oblidarà. Ni karts, ni "
               "paintball, ni tornar a sopar fora. Ho recomano a tothom.",
     },
+    {
+        "naam": "Jada",
+        "foto": "/img/review-jada.jpg",
+        "origineel": "es",
+        "es": "¡Una experiencia inolvidable! Me lo pasé genial recorriendo los caminos entre "
+              "viñedos, rodeada de naturaleza y encima con un atardecer y unas vistas "
+              "preciosas. Fue un plan diferente, súper divertido y que disfruté un montón. "
+              "¡Para repetirlo sin pensarlo!",
+        "en": "An unforgettable experience! I had a great time riding the trails between the "
+              "vineyards, surrounded by nature, and on top of that a sunset with beautiful "
+              "views. A different kind of plan, super fun, and I enjoyed it so much. I'd do "
+              "it again without a second thought!",
+        "ca": "Una experiència inoblidable! M'ho vaig passar genial recorrent els camins entre "
+              "vinyes, envoltada de natura i a sobre amb una posta de sol i unes vistes "
+              "precioses. Va ser un pla diferent, súper divertit i que vaig gaudir un munt. "
+              "Per repetir-ho sense pensar-ho!",
+    },
+    {
+        "naam": "Oliver",
+        "foto": "/img/review-oliver.jpg",
+        "origineel": "en",
+        "en": "It was my first time riding a Surron, the guide is very nice and friendly, it "
+              "was a very fun experience and I would definitely recommend it for everyone "
+              "from beginners to advanced riders.",
+        "es": "Era mi primera vez en una Surron. El guía es muy majo y cercano, fue una "
+              "experiencia muy divertida y la recomiendo sin duda a todo el mundo, desde "
+              "principiantes hasta pilotos avanzados.",
+        "ca": "Era la meva primera vegada en una Surron. El guia és molt simpàtic i proper, va "
+              "ser una experiència molt divertida i la recomano sens dubte a tothom, des de "
+              "principiants fins a pilots avançats.",
+    },
 ]
 
 VERTAALD_UIT = {
-    "en": {"es": "Translated from Spanish", "nl": "Translated from Dutch"},
-    "es": {"es": None, "nl": "Traducido del neerlandés"},
-    "ca": {"es": "Traduït del castellà", "nl": "Traduït del neerlandès"},
+    "en": {"es": "Translated from Spanish", "nl": "Translated from Dutch", "en": None},
+    "es": {"es": None, "nl": "Traducido del neerlandés", "en": "Traducido del inglés"},
+    "ca": {"es": "Traduït del castellà", "nl": "Traduït del neerlandès", "en": "Traduït de l'anglès"},
 }
 
 # ──────────────────────────────────────────────────────────────────────
@@ -227,7 +258,7 @@ T["en"] = dict(
 
     rev_label="Riders",
     rev_h="What people say after.",
-    rev_intro="Three people who rode with us, in their own words.",
+    rev_intro="Five people who rode with us, in their own words.",
 
     book_label="Two Minutes",
     book_h="Send us a message.",
@@ -390,7 +421,7 @@ T["es"] = dict(
 
     rev_label="Quien ya ha venido",
     rev_h="Lo que dicen después.",
-    rev_intro="Tres personas que han rodado con nosotros, con sus propias palabras.",
+    rev_intro="Cinco personas que han rodado con nosotros, con sus propias palabras.",
 
     book_label="Dos minutos",
     book_h="Escríbenos.",
@@ -550,7 +581,7 @@ T["ca"] = dict(
 
     rev_label="Qui ja ha vingut",
     rev_h="El que diuen després.",
-    rev_intro="Tres persones que han rodat amb nosaltres, amb les seves pròpies paraules.",
+    rev_intro="Cinc persones que han rodat amb nosaltres, amb les seves pròpies paraules.",
 
     book_label="Dos minuts",
     book_h="Escriu-nos.",
