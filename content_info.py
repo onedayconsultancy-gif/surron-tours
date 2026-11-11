@@ -138,6 +138,11 @@ INFO["en"] = dict(
         ("What safety gear do you provide?",
          "Helmet, elbow pads, knee pads and gloves. All included in the price. If you'd "
          "rather use your own helmet or pads, you're welcome to."),
+        ("Can we add a wine tasting?",
+         "Yes, after the ride. The wine comes from the estate's own vines, the ones you've "
+         "just been riding between. It's €45 per person on top of the ride and it's for "
+         "over-18s only — younger members of the group sit that part out. Mention it when "
+         "you book and we'll have it ready."),
         ("Will we be riding with other people?",
          "No. Every ride belongs to your booking alone. Whether you come on your own, as a "
          "couple or with a group of friends, the only people out there are you and your "
@@ -309,6 +314,11 @@ INFO["es"] = dict(
         ("¿Qué equipo de protección ponéis vosotros?",
          "Casco, coderas, rodilleras y guantes. Todo incluido en el precio. Si prefieres "
          "usar tu propio casco o protecciones, adelante."),
+        ("¿Podemos añadir una cata de vinos?",
+         "Sí, después de la ruta. El vino es de las propias viñas de la finca, las mismas "
+         "por las que acabas de rodar. Son 45 € por persona aparte de la ruta y solo para "
+         "mayores de 18 años — los menores del grupo no participan en esa parte. Dínoslo al "
+         "reservar y lo tenemos preparado."),
         ("¿Vamos a rodar con otra gente?",
          "No. Cada ruta es solo para tu reserva. Vengas solo, en pareja o con un grupo de "
          "amigos, los únicos que estáis ahí fuera sois vosotros y el guía. Nunca juntamos "

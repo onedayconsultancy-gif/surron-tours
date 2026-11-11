@@ -250,6 +250,9 @@ T["en"] = dict(
                             "rather not ride is welcome to come along and watch."),
       ("What to wear", "Closed shoes and long trousers. Helmet, knee and elbow "
                        "pads and gloves are ours and included."),
+      ("Wine tasting", "Optional, after the ride: a tasting of wine from the estate's own "
+                       "vines — the ones you've just been riding between. €45 per person, "
+                       "on top of the ride. Over 18s only."),
       ("Paying", "€50 holds your date; the rest in cash on the day. Free cancellation up "
                  "to 24 hours before, and you get the €50 back."),
       ("Languages", "English, Español, Català, Nederlands."),
@@ -415,6 +418,9 @@ T["es"] = dict(
                            "igualmente a acompañar."),
       ("Qué ponerte", "Zapato cerrado y pantalón largo. Casco, rodilleras, coderas y "
                       "guantes los ponemos nosotros y van incluidos."),
+      ("Cata de vinos", "Opcional, después de la ruta: una cata de vino de las propias "
+                        "viñas de la finca, las mismas por las que acabas de rodar. 45 € "
+                        "por persona, aparte de la ruta. Solo mayores de 18 años."),
       ("Cómo se paga", "50 € para reservar tu día; el resto en efectivo el mismo día. "
                        "Cancelación gratis hasta 24 horas antes y te devolvemos los 50 €."),
       ("Idiomas", "Español, Català, English, Nederlands."),
@@ -578,6 +584,9 @@ T["ca"] = dict(
                         "acompanyar."),
       ("Què posar-te", "Calçat tancat i pantaló llarg. Casc, genolleres, colzeres "
                        "i guants els posem nosaltres i van inclosos."),
+      ("Tast de vins", "Opcional, després de la ruta: un tast de vi de les pròpies vinyes "
+                       "de la finca, les mateixes per on acabes de rodar. 45 € per persona, "
+                       "a part de la ruta. Només majors de 18 anys."),
       ("Com es paga", "50 € per reservar el teu dia; la resta en efectiu el mateix dia. "
                       "Anul·lació gratuïta fins a 24 hores abans i et tornem els 50 €."),
       ("Idiomes", "Català, Español, English, Nederlands."),
