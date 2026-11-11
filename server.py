@@ -25,7 +25,7 @@ CACHE_RULES = (
 
 # Welke gebeurtenissen de teller aanneemt. Alles wat hier niet in staat
 # wordt genegeerd, zodat niemand de log kan volgooien.
-TELLER = ('balk', 'ja', 'nee', 'wa', 'wa-zonder')
+TELLER = ('balk', 'ja', 'nee', 'wa', 'wa-zonder', 'ig', 'ig-zonder')
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):

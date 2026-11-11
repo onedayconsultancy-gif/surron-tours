@@ -29,7 +29,7 @@ IG_HANDLE = "surronadventures"
 IG_URL = f"https://ig.me/m/{IG_HANDLE}"
 BASIS = "https://surrontours.com"
 CSS = "/style.css?v=20"
-PIXEL = "/pixel.js?v=3"
+PIXEL = "/pixel.js?v=4"
 VID = "?v=2"             # ophogen bij een nieuwe film, anders blijft de oude 30 dagen in de cache
 
 HIER = os.path.dirname(os.path.abspath(__file__))

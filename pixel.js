@@ -63,7 +63,9 @@
      tel('ja')        toestemming gegeven
      tel('nee')       geweigerd
      tel('wa')        WhatsApp aangetikt mét toestemming
-     tel('wa-zonder') WhatsApp aangetikt zónder toestemming  ← het lek  */
+     tel('wa-zonder') WhatsApp aangetikt zónder toestemming  ← het lek
+     tel('ig')        Instagram-DM aangetikt mét toestemming
+     tel('ig-zonder') Instagram-DM aangetikt zónder toestemming  */
   function tel(soort) {
     try {
       var u = '/t?e=' + soort;
@@ -72,7 +74,7 @@
     } catch (e) {}
   }
 
-  /* ── WhatsApp-klik = Contact ───────────────────────────────────
+  /* ── WhatsApp- of Instagram-klik = Contact ───────────────────────────────────
      Het gesprek zelf mag Meta niet zien; de klik ernaartoe wel, en
      wie klikt stuurt vrijwel altijd ook. Elke wa.me-knop op de site
      heeft target="_blank", dus de pagina blijft staan en de pixel
@@ -93,22 +95,27 @@
     return true;
   }
 
-  function waLink(el) {
+  function contactLink(el) {
     /* geen element.closest() gebruiken: op een <svg> binnen de knop
-       bestaat die in oudere Safari niet */
+       bestaat die in oudere Safari niet. Geeft 'wa' voor een
+       WhatsApp-knop, 'ig' voor de Instagram-DM-knop, anders null. */
     while (el && el !== document) {
-      if (el.tagName && el.tagName.toLowerCase() === 'a' &&
-          (el.getAttribute('href') || '').indexOf('wa.me') !== -1) return el;
+      if (el.tagName && el.tagName.toLowerCase() === 'a') {
+        var h = el.getAttribute('href') || '';
+        if (h.indexOf('wa.me') !== -1) return 'wa';
+        if (h.indexOf('ig.me') !== -1) return 'ig';
+      }
       el = el.parentNode;
     }
     return null;
   }
 
   document.addEventListener('click', function (e) {
-    if (!waLink(e.target)) return;
-    if (eenmalig('st_wa')) tel(window.fbq ? 'wa' : 'wa-zonder');
+    var kanaal = contactLink(e.target);
+    if (!kanaal) return;
+    if (eenmalig('st_' + kanaal)) tel(window.fbq ? kanaal : kanaal + '-zonder');
     if (window.fbq && eenmalig('st_contact')) {
-      fbq('track', 'Contact', { content_name: 'whatsapp_button' });
+      fbq('track', 'Contact', { content_name: kanaal === 'ig' ? 'instagram_button' : 'whatsapp_button' });
     }
   }, true);
 
