@@ -23,6 +23,7 @@ from urllib.parse import quote
 from content_info import INFO
 
 PIXEL_DOMEIN_VERIFICATIE = "gn4ay5faop5r913kbmelxx791i2kgo"
+GOOGLE_VERIFICATIE = "FeQ_ZBYAlJBjMUPc0EtJmtwmsHl9ANiLqEFRHrT8O4o"   # Search Console, laten staan
 WA_NUMMER = "34657390564"
 WA_WEERGAVE = "+34 657 390 564"
 IG_HANDLE = "surronadventures"
@@ -145,7 +146,7 @@ VERTAALD_UIT = {
 T = {}
 
 T["en"] = dict(
-    code="en", pad="/", map="", info="/info/", dank="/thanks.html", locale="en_GB",
+    code="en", pad="/", map="", info="/info/", locale="en_GB",
     titel="Surron Tours Tarragona | Ride an Electric Dirt Bike on 200 Private Hectares",
     meta="One hour on an electric dirt bike across 200 private hectares near Tarragona. "
          "No licence, no experience, all gear included. From €175. Message us and we'll tell "
@@ -305,7 +306,7 @@ T["en"] = dict(
 )
 
 T["es"] = dict(
-    code="es", pad="/es/", map="es", info="/es/info/", dank="/es/gracias.html", locale="es_ES",
+    code="es", pad="/es/", map="es", info="/es/info/", locale="es_ES",
     titel="Surron Tours Tarragona | Moto eléctrica por 200 hectáreas privadas",
     meta="Una hora en moto eléctrica por 200 hectáreas privadas cerca de Tarragona. Sin "
          "carnet, sin experiencia, equipo incluido. Desde 175 €. Escríbenos y te decimos qué "
@@ -473,7 +474,7 @@ T["es"] = dict(
 )
 
 T["ca"] = dict(
-    code="ca", pad="/ca/", map="ca", info="/ca/info/", dank="/ca/gracies.html", locale="ca_ES",
+    code="ca", pad="/ca/", map="ca", info="/ca/info/", locale="ca_ES",
     titel="Surron Tours Tarragona | Moto elèctrica per 200 hectàrees privades",
     meta="Una hora en moto elèctrica per 200 hectàrees privades al camp de Tarragona. "
          "Sense carnet, sense experiència, equip inclòs. 100 €. Escriu-nos i et diem "
@@ -698,6 +699,7 @@ def kop(c, titel, meta, url, extra_alt="", robots=""):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="facebook-domain-verification" content="{PIXEL_DOMEIN_VERIFICATIE}">
+<meta name="google-site-verification" content="{GOOGLE_VERIFICATIE}">
 {robots}
 <title>{titel}</title>
 <meta name="description" content="{meta}">

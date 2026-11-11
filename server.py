@@ -11,6 +11,7 @@ HTML wordt daarom nooit gecachet, afbeeldingen juist lang (die veranderen
 niet meer, en ze zijn zwaar).
 """
 import os
+import json
 import datetime
 import http.server
 import socketserver
@@ -26,6 +27,74 @@ CACHE_RULES = (
 # Welke gebeurtenissen de teller aanneemt. Alles wat hier niet in staat
 # wordt genegeerd, zodat niemand de log kan volgooien.
 TELLER = ('balk', 'ja', 'nee', 'wa', 'wa-zonder', 'ig', 'ig-zonder')
+
+# Waar de tellingen bewaard worden. Standaard in de container zelf; die
+# wordt bij elke deploy opnieuw gebouwd en dan beginnen de tellers op nul.
+# Wil je ze bewaren, koppel dan in Railway een Volume (bv. op /data) en
+# zet de variabele TELLER_DIR=/data.
+TELLER_DIR = os.environ.get('TELLER_DIR', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data'))
+TELLER_BESTAND = os.path.join(TELLER_DIR, 'teller.json')
+
+# /stats is alleen te zien met ?k=<STATS_TOKEN>. Zonder die variabele in
+# Railway bestaat de pagina niet (404). Er staan geen persoonsgegevens in,
+# alleen totalen per week.
+STATS_TOKEN = os.environ.get('STATS_TOKEN', '')
+
+
+def _laad_teller():
+    try:
+        with open(TELLER_BESTAND, encoding='utf-8') as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def _bewaar_teller(d):
+    try:
+        os.makedirs(TELLER_DIR, exist_ok=True)
+        tmp = TELLER_BESTAND + '.tmp'
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(d, f)
+        os.replace(tmp, TELLER_BESTAND)
+    except OSError as e:
+        print(f'TEL kon niet opslaan: {e}', flush=True)
+
+
+def _week(nu):
+    j, w, _ = nu.isocalendar()
+    return f'{j}-W{w:02d}'
+
+
+def _stats_html():
+    d = _laad_teller()
+    weken = sorted(d.keys(), reverse=True)
+    kol = TELLER
+    rijen = []
+    for wk in weken:
+        r = d[wk]
+        balk, ja = r.get('balk', 0), r.get('ja', 0)
+        pct = f'{100 * ja / balk:.0f}%' if balk else '–'
+        contact = r.get('wa', 0) + r.get('wa-zonder', 0) + r.get('ig', 0) + r.get('ig-zonder', 0)
+        cellen = ''.join(f'<td>{r.get(k, 0)}</td>' for k in kol)
+        rijen.append(f'<tr><th>{wk}</th>{cellen}<td>{pct}</td><td>{contact}</td></tr>')
+    koppen = ''.join(f'<th>{k}</th>' for k in kol)
+    tot = {k: sum(d[w].get(k, 0) for w in d) for k in kol}
+    tb, tj = tot['balk'], tot['ja']
+    tpct = f'{100 * tj / tb:.0f}%' if tb else '–'
+    tcontact = tot['wa'] + tot['wa-zonder'] + tot['ig'] + tot['ig-zonder']
+    totaal = ''.join(f'<td>{tot[k]}</td>' for k in kol)
+    return f"""<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Surron Tours · teller</title>
+<style>body{{font:15px/1.5 system-ui,sans-serif;margin:32px;color:#222}}table{{border-collapse:collapse}}
+th,td{{padding:6px 12px;border-bottom:1px solid #ddd;text-align:right}}th:first-child,td:first-child{{text-align:left}}
+thead th{{background:#f4f4f4}}tfoot td,tfoot th{{font-weight:700;background:#fafafa}}p{{max-width:640px;color:#555}}</style>
+<h1>Teller per week</h1>
+<p>balk = cookiebalk getoond · ja/nee = akkoord/geweigerd · wa/ig = WhatsApp/Instagram geklikt mét toestemming ·
+-zonder = geklikt zonder toestemming (ziet Meta niet) · % = ja ÷ balk · contact = alle wa+ig samen. Geen persoonsgegevens.</p>
+<table><thead><tr><th>week</th>{koppen}<th>% ja</th><th>contact</th></tr></thead>
+<tbody>{''.join(rijen) or '<tr><td colspan="10">nog niets geteld</td></tr>'}</tbody>
+<tfoot><tr><th>totaal</th>{totaal}<td>{tpct}</td><td>{tcontact}</td></tr></tfoot></table>
+<p style="margin-top:24px;font-size:13px">Bestand: {TELLER_BESTAND}</p></html>"""
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -47,17 +116,39 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         het IP-adres wordt niet weggeschreven — alleen een teller per
         soort gebeurtenis. Uitlezen doe je in de Railway-logs.
         """
-        if self.path.split('?')[0] == '/t':
+        pad = self.path.split('?')[0]
+        if pad == '/t':
             self._tel()
             return
+        if pad == '/stats':
+            self._stats()
+            return
         super().do_GET()
+
+    def _stats(self):
+        q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+        k = (q.get('k') or [''])[0]
+        if not STATS_TOKEN or k != STATS_TOKEN:
+            self.send_error(404)
+            return
+        body = _stats_html().encode('utf-8')
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
+        self.send_header('Cache-Control', 'no-store')
+        self.send_header('Content-Length', str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
 
     def _tel(self):
         q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
         e = (q.get('e') or [''])[0]
         if e in TELLER:
-            print(f'TEL {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} {e}',
-                  flush=True)
+            nu = datetime.datetime.now(datetime.timezone.utc)
+            print(f'TEL {nu:%Y-%m-%d %H:%M} {e}', flush=True)
+            d = _laad_teller()
+            wk = d.setdefault(_week(nu), {})
+            wk[e] = wk.get(e, 0) + 1
+            _bewaar_teller(d)
         self.send_response(204)
         self.send_header('Cache-Control', 'no-store')
         self.end_headers()
