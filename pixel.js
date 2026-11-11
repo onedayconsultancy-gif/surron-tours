@@ -103,7 +103,7 @@
       if (el.tagName && el.tagName.toLowerCase() === 'a') {
         var h = el.getAttribute('href') || '';
         if (h.indexOf('wa.me') !== -1) return 'wa';
-        if (h.indexOf('ig.me') !== -1) return 'ig';
+        if (h.indexOf('instagram.com') !== -1) return 'ig';
       }
       el = el.parentNode;
     }

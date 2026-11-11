@@ -26,10 +26,10 @@ PIXEL_DOMEIN_VERIFICATIE = "gn4ay5faop5r913kbmelxx791i2kgo"
 WA_NUMMER = "34657390564"
 WA_WEERGAVE = "+34 657 390 564"
 IG_HANDLE = "surronadventures"
-IG_URL = f"https://ig.me/m/{IG_HANDLE}"
+IG_URL = f"https://www.instagram.com/{IG_HANDLE}/"
 BASIS = "https://surrontours.com"
 CSS = "/style.css?v=20"
-PIXEL = "/pixel.js?v=4"
+PIXEL = "/pixel.js?v=5"
 VID = "?v=2"             # ophogen bij een nieuwe film, anders blijft de oude 30 dagen in de cache
 
 HIER = os.path.dirname(os.path.abspath(__file__))
