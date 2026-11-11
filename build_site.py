@@ -176,8 +176,8 @@ T["en"] = dict(
       ("feel-trail.jpg",
        "Two riders stopped on a trail through the scrub on the private estate near Tarragona",
        "On the trail"),
-      ("vineyard-track.jpg",
-       "Two electric dirt bikes on a red earth track running between the vines",
+      ("through-the-vines.jpg",
+       "Rider on an electric dirt bike on a track between the vines on the estate",
        "Through the vines"),
       ("track-clouds.jpg",
        "Two electric dirt bikes on an open red track with wooded hills behind",
@@ -220,7 +220,7 @@ T["en"] = dict(
          "and pine forest. A guide rides with you the whole way, and you ride with your "
          "own group only — never with strangers."),
         ("What you need",
-         "Nothing. No licence, no experience, no kit — helmet, body armour, gloves and the "
+         "Nothing. No licence, no experience, no kit — helmet, pads, gloves and the "
          "bike are all here waiting. From 12 years old."),
         ("What it costs",
          "€100 per person for one hour, €175 for two — the two-hour ride is the one both "
@@ -247,8 +247,8 @@ T["en"] = dict(
                             "own or with five friends. For bigger groups we bring in extra "
                             "bikes, so tell us your numbers in advance. Anyone who would "
                             "rather not ride is welcome to come along and watch."),
-      ("What to wear", "Closed shoes and long trousers. Helmet, body armour, knee and "
-                       "elbow pads and gloves are ours and included."),
+      ("What to wear", "Closed shoes and long trousers. Helmet, knee and elbow "
+                       "pads and gloves are ours and included."),
       ("Paying", "€50 holds your date; the rest in cash on the day. Free cancellation up "
                  "to 24 hours before, and you get the €50 back."),
       ("Languages", "English, Español, Català, Nederlands."),
@@ -331,8 +331,8 @@ T["es"] = dict(
       ("feel-trail.jpg",
        "Dos personas paradas en una pista entre la maleza en la finca privada cerca de Tarragona",
        "En la pista"),
-      ("vineyard-track.jpg",
-       "Dos motos eléctricas en un camino de tierra roja entre las viñas",
+      ("through-the-vines.jpg",
+       "Piloto en moto eléctrica por un camino entre las viñas de la finca",
        "Entre las viñas"),
       ("track-clouds.jpg",
        "Dos motos eléctricas en una pista roja abierta con las lomas boscosas detrás",
@@ -383,7 +383,7 @@ T["es"] = dict(
          "y pinar. Un guía va contigo todo el rato, y ruedas solo con tu grupo — nunca con "
          "desconocidos."),
         ("Qué necesitas",
-         "Nada. Ni carnet, ni experiencia, ni equipo — casco, peto, guantes y la moto ya "
+         "Nada. Ni carnet, ni experiencia, ni equipo — casco, protecciones, guantes y la moto ya "
          "están aquí esperándote. Desde los 12 años."),
         ("Cuánto cuesta",
          "100 € por persona una hora, 175 € dos horas — la de dos horas es de la que hablan "
@@ -410,7 +410,7 @@ T["es"] = dict(
                            "Para grupos grandes traemos motos de más, así que dinos cuántos "
                            "sois con antelación. Quien prefiera no conducir puede venir "
                            "igualmente a acompañar."),
-      ("Qué ponerte", "Zapato cerrado y pantalón largo. Casco, peto, rodilleras, coderas y "
+      ("Qué ponerte", "Zapato cerrado y pantalón largo. Casco, rodilleras, coderas y "
                       "guantes los ponemos nosotros y van incluidos."),
       ("Cómo se paga", "50 € para reservar tu día; el resto en efectivo el mismo día. "
                        "Cancelación gratis hasta 24 horas antes y te devolvemos los 50 €."),
@@ -492,8 +492,8 @@ T["ca"] = dict(
       ("feel-trail.jpg",
        "Dues persones aturades en una pista entre la brolla a la finca privada a prop de Tarragona",
        "A la pista"),
-      ("vineyard-track.jpg",
-       "Dues motos elèctriques en un camí de terra roja entre les vinyes",
+      ("through-the-vines.jpg",
+       "Pilot en moto elèctrica per un camí entre les vinyes de la finca",
        "Entre les vinyes"),
       ("track-clouds.jpg",
        "Dues motos elèctriques en una pista roja oberta amb els turons boscosos al darrere",
@@ -543,7 +543,7 @@ T["ca"] = dict(
          "pinede. Un guia va amb tu tota l'estona, i rodes només amb el teu grup — mai amb "
          "desconeguts."),
         ("Què necessites",
-         "Res. Ni carnet, ni experiència, ni equip — casc, pitrera, guants i la moto ja són "
+         "Res. Ni carnet, ni experiència, ni equip — casc, proteccions, guants i la moto ja són "
          "aquí esperant-te. A partir dels 12 anys."),
         ("Quant costa",
          "100 € per persona una hora, 175 € dues hores — la de dues hores és de la que parlen "
@@ -570,7 +570,7 @@ T["ca"] = dict(
                         "grans portem motos de més, així que digues-nos quants sou amb "
                         "antelació. Qui prefereixi no conduir pot venir igualment a "
                         "acompanyar."),
-      ("Què posar-te", "Calçat tancat i pantaló llarg. Casc, pitrera, genolleres, colzeres "
+      ("Què posar-te", "Calçat tancat i pantaló llarg. Casc, genolleres, colzeres "
                        "i guants els posem nosaltres i van inclosos."),
       ("Com es paga", "50 € per reservar el teu dia; la resta en efectiu el mateix dia. "
                       "Anul·lació gratuïta fins a 24 hores abans i et tornem els 50 €."),

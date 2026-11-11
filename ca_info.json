@@ -29,8 +29,6 @@
  "Agua, y crema solar en verano": "Aigua, i crema solar a l'estiu",
  "Barcelona": "Barcelona",
  "Briefing de seguridad y vueltas de práctica antes de salir": "Briefing de seguretat i voltes de pràctica abans de sortir",
- "Casco, peto para pecho y espalda, coderas, rodilleras y guantes. Todo incluido en el precio. Si prefieres usar tu propio casco o peto, adelante.": "Casc, peto per a pit i esquena, colzeres, genolleres i guants. Tot inclòs en el preu. Si prefereixes fer servir el teu propi casc o peto, endavant.",
- "Casco, peto, coderas, rodilleras y guantes": "Casc, peto, colzeres, genolleres i guants",
  "Cien por cien eléctrica, casi silenciosa y de unos 55 kg — aproximadamente un tercio de lo que pesa una enduro de gasolina. Sin embrague y sin marchas: giras el puño y sales. Todo el mundo va en la misma moto; lo único que cambiamos es el modo de potencia. <b>Eco</b> si no has montado nunca, <b>Sport</b> si sabes lo que haces, y el guía te lo puede cambiar a mitad de ruta cuando ya vayas cómodo.": "Cent per cent elèctrica, gairebé silenciosa i d'uns 55 kg — aproximadament un terç del que pesa una enduro de gasolina. Sense embragatge i sense marxes: gires el puny i surts. Tothom va amb la mateixa moto; l'únic que canviem és el mode de potència. <b>Eco</b> si no has anat mai en moto, <b>Sport</b> si saps el que fas, i el guia te'l pot canviar a mitja ruta quan ja vagis còmode.",
  "Con lluvia floja se rueda perfectamente y hasta es divertido. Si el tiempo lo hace inseguro te llamamos y te cambiamos la hora — nunca pierdes el dinero por el tiempo.": "Amb pluja fluixa es roda perfectament i fins i tot és divertit. Si el temps ho fa insegur et truquem i et canviem l'hora — mai no perds els diners pel temps.",
  "Cuando te vaya bien. Abrimos siete días a la semana y montamos la hora alrededor de tu día — por la mañana, por la tarde o al atardecer, que es cuando la finca se ve como en las fotos. Dinos el día y más o menos la hora y te decimos qué queda libre.": "Quan et vagi bé. Obrim set dies a la setmana i muntem l'hora al voltant del teu dia — al matí, a la tarda o al capvespre, que és quan la finca es veu com a les fotos. Digues-nos el dia i més o menys l'hora i t'expliquem què queda lliure.",
@@ -83,7 +81,6 @@
  "Todo lo que necesitas saber | Surron Tours Tarragona": "Tot el que necessites saber | Surron Tours Tarragona",
  "Todo lo que necesitas saber.": "Tot el que necessites saber.",
  "Tres motos eléctricas Surron Light Bee en fila en la finca privada cerca de Tarragona, con viñedo y pinar detrás": "Tres motos elèctriques Surron Light Bee en filera a la finca privada a prop de Tarragona, amb vinya i pineda al darrere",
- "Tu propio casco o peto si lo prefieres (opcional)": "El teu propi casc o peto si ho prefereixes (opcional)",
  "Un guía contigo todo el rato": "Un guia amb tu tota l'estona",
  "Una Surron Light Bee para ti solo": "Una Surron Light Bee per a tu sol",
  "Y ahí fuera no hay nadie más. Esto no es un circuito público ni un bike park compartido. Es una finca ecológica en funcionamiento — 200 hectáreas de viña, olivo y pino — y mientras estás dentro, es tuya. Sin tráfico. Sin colas. Sin otro grupo esperando turno.": "I allà fora no hi ha ningú més. Això no és un circuit públic ni un bike park compartit. És una finca ecològica en funcionament — 200 hectàrees de vinya, olivera i pi — i mentre hi ets dins, és teva. Sense trànsit. Sense cues. Sense cap altre grup esperant torn.",
@@ -105,5 +102,8 @@
  "¿Sin coche?": "Sense cotxe?",
  "¿Te queda alguna duda?": "Et queda algun dubte?",
  "¿Vamos a rodar con otra gente?": "Rodarem amb altra gent?",
- "← Volver a la página principal": "← Tornar a la pàgina principal"
+ "← Volver a la página principal": "← Tornar a la pàgina principal",
+ "Casco, coderas, rodilleras y guantes. Todo incluido en el precio. Si prefieres usar tu propio casco o protecciones, adelante.": "Casc, colzeres, genolleres i guants. Tot inclòs en el preu. Si prefereixes fer servir el teu propi casc o proteccions, endavant.",
+ "Casco, coderas, rodilleras y guantes": "Casc, colzeres, genolleres i guants",
+ "Tu propio casco o protecciones si lo prefieres (opcional)": "El teu propi casc o proteccions si ho prefereixes (opcional)"
 }

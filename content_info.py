@@ -80,7 +80,7 @@ INFO["en"] = dict(
             "Sunglasses or clear glasses if you wear them",
             "Water, and sun cream in summer",
             "Clothes you don't mind getting dusty — you will get dusty",
-            "Your own helmet or armour if you prefer it (optional)",
+            "Your own helmet or pads if you prefer them (optional)",
         ]),
         ("Practical details", [
             "<b>Location:</b> private estate in the Tarragona countryside — exact address "
@@ -105,7 +105,7 @@ INFO["en"] = dict(
     incl_t="What's included in the price",
     incl=["A Surron Light Bee to yourself",
           "A guide with you the whole time",
-          "Helmet, body armour, elbow and knee pads, gloves",
+          "Helmet, elbow and knee pads, gloves",
           "Safety briefing and practice laps before you set off",
           "The route and difficulty picked to match you",
           "Access to the full 200-hectare private estate",
@@ -136,9 +136,8 @@ INFO["en"] = dict(
          "rides with them either way, and younger riders start in Eco mode. If we see on "
          "the day that it isn't a good fit, we'll tell you straight."),
         ("What safety gear do you provide?",
-         "Helmet, body armour for chest and back, elbow pads, knee pads and gloves. All "
-         "included in the price. If you'd rather use your own helmet or armour, you're "
-         "welcome to."),
+         "Helmet, elbow pads, knee pads and gloves. All included in the price. If you'd "
+         "rather use your own helmet or pads, you're welcome to."),
         ("Will we be riding with other people?",
          "No. Every ride belongs to your booking alone. Whether you come on your own, as a "
          "couple or with a group of friends, the only people out there are you and your "
@@ -251,7 +250,7 @@ INFO["es"] = dict(
             "Gafas de sol o gafas transparentes si las usas",
             "Agua, y crema solar en verano",
             "Ropa que no te importe manchar de polvo — te vas a manchar",
-            "Tu propio casco o peto si lo prefieres (opcional)",
+            "Tu propio casco o protecciones si lo prefieres (opcional)",
         ]),
         ("Detalles prácticos", [
             "<b>Ubicación:</b> finca privada en el campo de Tarragona — te mandamos la "
@@ -276,7 +275,7 @@ INFO["es"] = dict(
     incl_t="Qué incluye el precio",
     incl=["Una Surron Light Bee para ti solo",
           "Un guía contigo todo el rato",
-          "Casco, peto, coderas, rodilleras y guantes",
+          "Casco, coderas, rodilleras y guantes",
           "Briefing de seguridad y vueltas de práctica antes de salir",
           "La ruta y la dificultad elegidas según tu nivel",
           "Acceso a las 200 hectáreas privadas de la finca",
@@ -308,8 +307,8 @@ INFO["es"] = dict(
          "ambos casos sale un guía profesional con ellos, y los más jóvenes empiezan en "
          "modo Eco. Si el día de la ruta vemos que no encaja, te lo diremos claramente."),
         ("¿Qué equipo de protección ponéis vosotros?",
-         "Casco, peto para pecho y espalda, coderas, rodilleras y guantes. Todo incluido en "
-         "el precio. Si prefieres usar tu propio casco o peto, adelante."),
+         "Casco, coderas, rodilleras y guantes. Todo incluido en el precio. Si prefieres "
+         "usar tu propio casco o protecciones, adelante."),
         ("¿Vamos a rodar con otra gente?",
          "No. Cada ruta es solo para tu reserva. Vengas solo, en pareja o con un grupo de "
          "amigos, los únicos que estáis ahí fuera sois vosotros y el guía. Nunca juntamos "
