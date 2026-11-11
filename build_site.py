@@ -25,9 +25,10 @@ from content_info import INFO
 PIXEL_DOMEIN_VERIFICATIE = "gn4ay5faop5r913kbmelxx791i2kgo"
 WA_NUMMER = "34657390564"
 WA_WEERGAVE = "+34 657 390 564"
-FORM_MAIL = "chimobous01@gmail.com"
+IG_HANDLE = "surronadventures"
+IG_URL = f"https://ig.me/m/{IG_HANDLE}"
 BASIS = "https://surrontours.com"
-CSS = "/style.css?v=19"
+CSS = "/style.css?v=20"
 PIXEL = "/pixel.js?v=3"
 VID = "?v=2"             # ophogen bij een nieuwe film, anders blijft de oude 30 dagen in de cache
 
@@ -158,7 +159,7 @@ T["en"] = dict(
          "pine forest, with a guide the whole way. One hour from Barcelona. No licence. "
          "No experience. No road.",
     cta_wa="Ask which dates are free",
-    cta_form="Or send the form",
+    cta_form="Or DM us on Instagram",
     cta_noot="Usually answered within the hour.",
     trust=["From €175 p.p.", "No minimum group", "Ages 12+", "No licence needed"],
     feiten=[("€175", "per person, two hours"), ("€100", "per person, one hour"),
@@ -264,10 +265,12 @@ T["en"] = dict(
     book_h="Send us a message.",
     book_intro="Tell us roughly when you'd like to come and how many of you there are. "
                "We'll come straight back with the dates that are free. Nothing to pay, "
-               "nothing to commit to.",
+               "nothing to commit to. WhatsApp or Instagram, whichever you prefer.",
     wa_cta="Message us on WhatsApp",
     wa_note="Fastest way — we usually reply within minutes.",
-    wa_of="or leave your number here",
+    wa_of="or on Instagram",
+    ig_cta="Send us a DM on Instagram",
+    ig_note="Same people, same speed —",
     wa_txt="Hi! Which dates do you have free for the Surron ride?",
     wa_vraag="Hi! I have a question about the Surron ride.",
     f_naam="Your name", f_naam_ph="Alex",
@@ -313,7 +316,7 @@ T["es"] = dict(
          "viñedo y pinar, con guía todo el rato. A una hora de Barcelona. Sin carnet. "
          "Sin experiencia. Sin carretera.",
     cta_wa="Pregunta qué días quedan libres",
-    cta_form="O rellena el formulario",
+    cta_form="O por DM en Instagram",
     cta_noot="Te contestamos en menos de una hora.",
     trust=["Desde 175 €/persona", "Sin mínimo de personas", "Desde los 12 años", "Sin carnet"],
     feiten=[("175 €", "por persona, dos horas"), ("100 €", "por persona, una hora"),
@@ -426,10 +429,13 @@ T["es"] = dict(
     book_label="Dos minutos",
     book_h="Escríbenos.",
     book_intro="Dinos más o menos cuándo te iría bien y cuántos sois. Te contestamos con "
-               "los días que quedan libres. Sin pagar nada y sin compromiso.",
+               "los días que quedan libres. Sin pagar nada y sin compromiso. Por WhatsApp "
+               "o por Instagram, como prefieras.",
     wa_cta="Escríbenos por WhatsApp",
     wa_note="Lo más rápido — solemos contestar en minutos.",
-    wa_of="o déjanos tu número aquí",
+    wa_of="o por Instagram",
+    ig_cta="Mándanos un DM por Instagram",
+    ig_note="Los mismos, igual de rápido —",
     wa_txt="¡Hola! ¿Qué días tenéis libres para la ruta en Surron?",
     wa_vraag="¡Hola! Tengo una duda sobre la ruta en Surron.",
     f_naam="Tu nombre", f_naam_ph="Marc",
@@ -474,7 +480,7 @@ T["ca"] = dict(
     lead="Una hora conduint tu mateix una moto elèctrica per 200 hectàrees privades de "
          "vinya i pinede, amb guia tota l'estona. Sense carnet. Sense experiència. 100 €.",
     cta_wa="Pregunta quins dies queden lliures",
-    cta_form="O omple el formulari",
+    cta_form="O per DM a Instagram",
     cta_noot="Et contestem en menys d'una hora.",
     trust=["Des de 100 €/persona", "Sense mínim de persones", "A partir dels 12 anys", "Sense carnet"],
     feiten=[("100 €", "per persona, una hora"), ("175 €", "per persona, dues hores"),
@@ -586,10 +592,13 @@ T["ca"] = dict(
     book_label="Dos minuts",
     book_h="Escriu-nos.",
     book_intro="Digues-nos més o menys quan et aniria bé i quants sou. Et contestem amb els "
-               "dies que queden lliures. Sense pagar res i sense compromís.",
+               "dies que queden lliures. Sense pagar res i sense compromís. Per WhatsApp "
+               "o per Instagram, com prefereixis.",
     wa_cta="Escriu-nos per WhatsApp",
     wa_note="El més ràpid — solem contestar en minuts.",
-    wa_of="o deixa'ns el teu número aquí",
+    wa_of="o per Instagram",
+    ig_cta="Envia'ns un DM per Instagram",
+    ig_note="Els mateixos, igual de ràpid —",
     wa_txt="Hola! Quins dies teniu lliures per a la ruta en Surron?",
     wa_vraag="Hola! Tinc un dubte sobre la ruta en Surron.",
     f_naam="El teu nom", f_naam_ph="Marc",
@@ -619,6 +628,9 @@ T["ca"] = dict(
                     "i terreny off-road. Sense carnet de conduir. Equip de protecció inclòs.",
     ld_aanbod="Ruta guiada d'1 hora en Surron Light Bee",
 )
+
+IG_SVG = ('<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" '
+          'd="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2M12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.1 1.4C1.3 2.6.9 3.3.6 4.1.3 4.9.1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.2.6 3 .3.8.7 1.5 1.4 2.1.6.7 1.3 1.1 2.1 1.4.8.3 1.7.5 3 .6C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.7 2.1-1.4.7-.6 1.1-1.3 1.4-2.1.3-.8.5-1.7.6-3 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.2-.6-3-.3-.8-.7-1.5-1.4-2.1C21.4 1.3 20.7.9 19.9.6c-.8-.3-1.7-.5-3-.6C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>')
 
 WA_SVG = ('<svg viewBox="0 0 24 24" width="{w}" height="{w}" aria-hidden="true"><path '
           'fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471'
@@ -822,7 +834,6 @@ def bouw_landing(taal):
     trust = "".join(f"<span>{x}</span>" for x in c["trust"])
     feiten = "".join(f'<div class="fact"><b>{a}</b><span>{b}</span></div>'
                      for a, b in c["feiten"])
-    vindopties = "".join(f'<option>{o}</option>' for o in c["f_vind_opties"])
     kort = "\n".join(f'''      <div class="kort-card">
         <h3>{t}</h3>
         <p>{p}</p>
@@ -905,7 +916,7 @@ def bouw_landing(taal):
       <a href="{wa_url(c["wa_txt"])}" class="btn btn-lg btn-wa" target="_blank" rel="noopener">
         {WA_SVG.format(w=22)} {c["cta_wa"]}
       </a>
-      <a href="#book" class="btn btn-lg btn-ghost">{c["cta_form"]}</a>
+      <a href="{IG_URL}" class="btn btn-lg btn-ghost" target="_blank" rel="noopener">{c["cta_form"]}</a>
     </div>
     <p class="cta-noot">{c["cta_noot"]}</p>
     <div class="hero-trust">{trust}</div>
@@ -1027,52 +1038,11 @@ def bouw_landing(taal):
         <div class="wa-or"><span>{c["wa_of"]}</span></div>
       </div>
 
-      <form action="https://formsubmit.co/{FORM_MAIL}" method="POST">
-        <input type="hidden" name="_subject" value="{c["form_subject"]}">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="Language" value="{c["form_taal"]}">
-        <input type="hidden" name="_next" value="{BASIS}{c["dank"]}">
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
-
-        <div class="frow">
-          <div class="field">
-            <label for="name">{c["f_naam"]}</label>
-            <input id="name" type="text" name="Name" required placeholder="{c["f_naam_ph"]}">
-          </div>
-          <div class="field">
-            <label for="phone">{c["f_tel"]}</label>
-            <input id="phone" type="tel" name="WhatsApp" required placeholder="{c["f_tel_ph"]}">
-          </div>
-        </div>
-
-        <div class="frow">
-          <div class="field">
-            <label for="people">{c["f_aantal"]} <span class="veld-hint">{c["f_aantal_hint"]}</span></label>
-            <select id="people" name="Riders">
-              <option>1</option><option>2</option><option>3</option>
-              <option>4</option><option>5</option><option>6+</option>
-            </select>
-          </div>
-          <div class="field field-wide">
-            <label for="when">{c["f_wanneer"]}</label>
-            <input id="when" type="text" name="When" placeholder="{c["f_wanneer_ph"]}">
-          </div>
-        </div>
-
-        <div class="frow">
-          <div class="field field-wide">
-            <label for="found">{c["f_vind"]}</label>
-            <select id="found" name="Found us">
-              <option value="">{c["f_vind_leeg"]}</option>
-              {vindopties}
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-lg">{c["f_send"]}</button>
-        <p class="form-klein">{c["f_klein"]}</p>
-      </form>
+      <a class="ig-cta" href="{IG_URL}" target="_blank" rel="noopener">
+        {IG_SVG}
+        {c["ig_cta"]}
+      </a>
+      <p class="wa-note">{c["ig_note"]} <b>@{IG_HANDLE}</b></p>
 
       <div class="book-alt">
         <div class="wa-alt">
@@ -1207,7 +1177,7 @@ def bouw_info(taal):
       {WA_SVG.format(w=26)}
       {c["wa_cta"]}
     </a>
-    <p style="margin-top:26px"><a href="{c["pad"]}#book" class="btn btn-ghost">{c["cta_form"]}</a></p>
+    <p style="margin-top:26px"><a href="{IG_URL}" class="btn btn-ghost" target="_blank" rel="noopener">{c["cta_form"]}</a></p>
   </div>
 </section>
 ''' + voettekst(c, op_info=True) + SCRIPTS.format(redirect="", event="ViewContent", slider="", pixel=PIXEL)
