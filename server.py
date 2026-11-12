@@ -12,6 +12,7 @@ niet meer, en ze zijn zwaar).
 """
 import os
 import json
+import threading
 import datetime
 import http.server
 import socketserver
@@ -39,6 +40,8 @@ TELLER_BESTAND = os.path.join(TELLER_DIR, 'teller.json')
 # Railway bestaat de pagina niet (404). Er staan geen persoonsgegevens in,
 # alleen totalen per week.
 STATS_TOKEN = os.environ.get('STATS_TOKEN', '')
+
+_SLOT = threading.Lock()   # één schrijver tegelijk op teller.json
 
 
 def _laad_teller():
@@ -145,10 +148,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if e in TELLER:
             nu = datetime.datetime.now(datetime.timezone.utc)
             print(f'TEL {nu:%Y-%m-%d %H:%M} {e}', flush=True)
-            d = _laad_teller()
-            wk = d.setdefault(_week(nu), {})
-            wk[e] = wk.get(e, 0) + 1
-            _bewaar_teller(d)
+            with _SLOT:
+                d = _laad_teller()
+                wk = d.setdefault(_week(nu), {})
+                wk[e] = wk.get(e, 0) + 1
+                _bewaar_teller(d)
         self.send_response(204)
         self.send_header('Cache-Control', 'no-store')
         self.end_headers()
@@ -172,7 +176,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(('', port), Handler) as httpd:
+    # Threaded: een trage download (video, foto) blokkeert dan niet de
+    # teller-beacons of een andere bezoeker. Eerder gaf dat af en toe 503.
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+    socketserver.ThreadingTCPServer.daemon_threads = True
+    with socketserver.ThreadingTCPServer(('', port), Handler) as httpd:
         print(f'serving on :{port}', flush=True)
         httpd.serve_forever()
