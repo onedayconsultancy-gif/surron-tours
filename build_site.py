@@ -242,7 +242,11 @@ T["en"] = dict(
                "which is when it looks like the photos. Tell us your day and roughly what "
                "time. Fifteen minutes late is no problem, just message us."),
       ("How long", "One hour riding, or two. Allow about half an hour on top for the "
-                   "briefing, kitting up and a few practice laps."),
+                   "briefing, kitting up and a few practice laps. Want longer? Three "
+                   "hours, half a day — just ask and we'll put it together."),
+      ("Birthdays", "Our birthday ride: two hours on the bikes, then tapas among the "
+                     "vines and a tasting of the local olive oil. Tell us who's "
+                     "celebrating and we'll take care of the rest."),
       ("Age", "From 12. Under 15s ride with a parent or guardian there on the day."),
       ("Who you ride with", "Only your own group. We never put you together with people "
                             "you don't know — the slot is yours, whether you come on your "
@@ -409,7 +413,11 @@ T["es"] = dict(
                  "atardecer, que es cuando esto se ve como en las fotos. Dinos tu día y más "
                  "o menos a qué hora. Quince minutos tarde no pasa nada, solo avísanos."),
       ("Cuánto dura", "Una hora conduciendo, o dos. Cuenta con media hora más para el "
-                      "briefing, equiparte y unas vueltas de práctica."),
+                      "briefing, equiparte y unas vueltas de práctica. ¿Quieres más? "
+                      "Tres horas, media jornada — pídelo y lo montamos."),
+      ("Cumpleaños", "Nuestra ruta de cumpleaños: dos horas en moto, y después tapas "
+                     "entre las viñas y una cata del aceite de oliva de la zona. Dinos "
+                     "quién cumple y nosotros nos encargamos del resto."),
       ("Edad", "Desde los 12. Los menores de 15 van con un padre, madre o tutor presente "
                "ese día."),
       ("Con quién ruedas", "Solo con tu propio grupo. Nunca te juntamos con gente que no "
@@ -575,7 +583,11 @@ T["ca"] = dict(
                "és quan això es veu com a les fotos. Digues-nos el teu dia i més o menys a "
                "quina hora. Quinze minuts tard no passa res, només avisa'ns."),
       ("Quant dura", "Una hora conduint, o dues. Compta mitja hora més per al briefing, "
-                     "equipar-te i unes voltes de pràctica."),
+                     "equipar-te i unes voltes de pràctica. En vols més? Tres hores, "
+                     "mig dia — demana-ho i ho muntem."),
+      ("Aniversaris", "La nostra ruta d'aniversari: dues hores en moto, i després tapes "
+                      "entre les vinyes i un tast de l'oli d'oliva de la zona. Digues-nos "
+                      "qui fa anys i nosaltres ens encarreguem de la resta."),
       ("Edat", "A partir dels 12. Els menors de 15 van amb un pare, mare o tutor present "
                "aquell dia."),
       ("Amb qui rodes", "Només amb el teu grup. Mai no et posem amb gent que no coneixes "

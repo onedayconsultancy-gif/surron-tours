@@ -148,6 +148,16 @@ INFO["en"] = dict(
          "couple or with a group of friends, the only people out there are you and your "
          "guide. We never put two bookings together, and you never share the estate with a "
          "group you don't know."),
+        ("Can we ride for longer than two hours?",
+         "Yes. One and two hours are the standard rides, but if you want three hours, "
+         "half a day or a full morning with a break in between, just ask — we build the "
+         "day around you. Message us with what you have in mind and we'll tell you what's "
+         "possible."),
+        ("Do you do birthdays?",
+         "Yes, and it's one of our favourites. The birthday ride is two hours on the "
+         "bikes, then tapas set out among the vines and a tasting of the local olive oil. "
+         "Tell us who's celebrating, how many you are and the date, and we take care of "
+         "the rest."),
         ("Can we come as a group?",
          "Yes. Small groups, families, stag and hen groups and company outings all work "
          "well. Because we can set a different power mode for each rider, mixed-ability "
@@ -324,6 +334,15 @@ INFO["es"] = dict(
          "amigos, los únicos que estáis ahí fuera sois vosotros y el guía. Nunca juntamos "
          "dos reservas en una misma ruta, y nunca compartes la finca con un grupo que no "
          "conoces."),
+        ("¿Podemos rodar más de dos horas?",
+         "Sí. Una y dos horas son las rutas estándar, pero si quieres tres horas, media "
+         "jornada o una mañana entera con pausa, pídelo — montamos el día a tu medida. "
+         "Escríbenos con lo que tienes en mente y te decimos qué es posible."),
+        ("¿Hacéis cumpleaños?",
+         "Sí, y es de lo que más nos gusta. La ruta de cumpleaños son dos horas en moto, "
+         "y después tapas entre las viñas y una cata del aceite de oliva de la zona. "
+         "Dinos quién cumple, cuántos sois y la fecha, y nosotros nos encargamos del "
+         "resto."),
         ("¿Podemos venir en grupo?",
          "Sí. Grupos pequeños, familias, despedidas y salidas de empresa funcionan muy "
          "bien. Como podemos poner un modo de potencia distinto a cada piloto, los grupos "
