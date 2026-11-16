@@ -149,11 +149,11 @@ T["en"] = dict(
     code="en", pad="/", map="", info="/info/", locale="en_GB",
     titel="Surron Tours Tarragona | Ride an Electric Dirt Bike on 200 Private Hectares",
     meta="One hour on an electric dirt bike across 200 private hectares near Tarragona. "
-         "No licence, no experience, all gear included. From €175. Message us and we'll tell "
+         "No licence, no experience, all gear included. From €100. Message us and we'll tell "
          "you which dates are free.",
     og_titel="The Best Hour of Your Holiday | Surron Tours Tarragona",
     og_meta="Ride an electric dirt bike across 200 private hectares near Tarragona. "
-            "No licence needed. All gear included. From €175.",
+            "No licence needed. All gear included. From €100.",
     badge="The only Surron tours in Catalonia",
     h1_1="The Day You'll", h1_2="Actually Remember.",
     lead="Two hours on an electric dirt bike across 200 private hectares of vineyard and "
@@ -162,7 +162,7 @@ T["en"] = dict(
     cta_wa="Ask which dates are free",
     cta_form="Or DM us on Instagram",
     cta_noot="Usually answered within the hour.",
-    trust=["From €175 p.p.", "No minimum group", "Ages 12+", "No licence needed"],
+    trust=["From €100 p.p.", "No minimum group", "Ages 12+", "No licence needed"],
     feiten=[("€175", "per person, two hours"), ("€100", "per person, one hour"),
             ("200 ha", "private estate"), ("0", "licence needed")],
 
@@ -211,7 +211,7 @@ T["en"] = dict(
       "that afternoon ends, and in a month you will not be telling anyone about it.",
       "This is an hour out of the city, on a mountain with nobody else on it, on an "
       "electric dirt bike that you drive yourself. No licence. No experience. Five "
-      "minutes in you are not following a guide at walking pace — you are riding.",
+      "minutes in you are not crawling along at the slowest rider's pace — you are riding.",
       "It is the bit of the trip people ask you to tell twice.",
     ],
     kort_label="In Thirty Seconds",
@@ -225,10 +225,9 @@ T["en"] = dict(
          "Nothing. No licence, no experience, no kit — helmet, pads, gloves and the "
          "bike are all here waiting. From 12 years old."),
         ("What it costs",
-         "€100 per person for one hour, €175 for two — the two-hour ride is the one both "
-         "reviews below "
-         "are talking about. Everything included. You pay on the day and can cancel free up "
-         "to 24 hours before."),
+         "€100 per person for one hour, €175 for two — the two-hour ride is the one most of "
+         "the riders below are talking about. Everything included. €50 holds your date, "
+         "the rest on the day, and you can cancel free up to 24 hours before."),
     ],
     prakt_h="Before you ask.",
     prakt=[
@@ -245,7 +244,7 @@ T["en"] = dict(
                    "briefing, kitting up and a few practice laps. Want longer? Three "
                    "hours, half a day — just ask and we'll put it together."),
       ("Birthdays", "Our birthday ride: two hours on the bikes, then tapas among the "
-                     "vines and a tasting of the local olive oil. Tell us who's "
+                     "vines and a tasting of the estate's own olive oil. Tell us who's "
                      "celebrating and we'll take care of the rest."),
       ("Age", "From 12. Under 15s ride with a parent or guardian there on the day."),
       ("Who you ride with", "Only your own group. We never put you together with people "
@@ -313,11 +312,11 @@ T["es"] = dict(
     code="es", pad="/es/", map="es", info="/es/info/", locale="es_ES",
     titel="Surron Tours Tarragona | Moto eléctrica por 200 hectáreas privadas",
     meta="Una hora en moto eléctrica por 200 hectáreas privadas cerca de Tarragona. Sin "
-         "carnet, sin experiencia, equipo incluido. Desde 175 €. Escríbenos y te decimos qué "
+         "carnet, sin experiencia, equipo incluido. Desde 100 €. Escríbenos y te decimos qué "
          "días quedan libres.",
     og_titel="Un plan que no se olvida | Surron Tours Tarragona",
     og_meta="Conduce una moto eléctrica por 200 hectáreas privadas cerca de Tarragona. "
-            "Sin carnet. Equipo incluido. Desde 175 €.",
+            "Sin carnet. Equipo incluido. Desde 100 €.",
     badge="Las únicas rutas en Surron de Catalunya",
     h1_1="Un Plan Que", h1_2="No Se Olvida.",
     lead="Dos horas conduciendo tú mismo una moto eléctrica por 200 hectáreas privadas de "
@@ -326,7 +325,7 @@ T["es"] = dict(
     cta_wa="Pregunta qué días quedan libres",
     cta_form="O por DM en Instagram",
     cta_noot="Te contestamos en menos de una hora.",
-    trust=["Desde 175 €/persona", "Sin mínimo de personas", "Desde los 12 años", "Sin carnet"],
+    trust=["Desde 100 €/persona", "Sin mínimo de personas", "Desde los 12 años", "Sin carnet"],
     feiten=[("175 €", "por persona, dos horas"), ("100 €", "por persona, una hora"),
             ("200 ha", "finca privada"), ("0", "carnet necesario")],
 
@@ -382,7 +381,7 @@ T["es"] = dict(
       "dentro de un mes no te vas a acordar de ella.",
       "Esto es media hora de Tarragona, una hora de Barcelona: una montaña entera donde "
       "no hay nadie más y una moto eléctrica que conduces tú. Sin carnet. Sin "
-      "experiencia. A los cinco minutos no vas detrás del guía a paso de tortuga — vas "
+      "experiencia. A los cinco minutos no vas al ritmo del más lento — vas "
       "conduciendo.",
       "Es el plan que se cuenta dos veces.",
     ],
@@ -397,10 +396,9 @@ T["es"] = dict(
          "Nada. Ni carnet, ni experiencia, ni equipo — casco, protecciones, guantes y la moto ya "
          "están aquí esperándote. Desde los 12 años."),
         ("Cuánto cuesta",
-         "100 € por persona una hora, 175 € dos horas — la de dos horas es de la que hablan "
-         "las dos "
-         "reseñas de abajo. Todo incluido. Se paga el mismo día y puedes cancelar gratis "
-         "hasta 24 horas antes."),
+         "100 € por persona una hora, 175 € dos horas — la de dos horas es de la que habla "
+         "la mayoría de las reseñas de abajo. Todo incluido. 50 € para reservar, el resto "
+         "el mismo día, y puedes cancelar gratis hasta 24 horas antes."),
     ],
     prakt_h="Antes de que preguntes.",
     prakt=[
@@ -416,7 +414,7 @@ T["es"] = dict(
                       "briefing, equiparte y unas vueltas de práctica. ¿Quieres más? "
                       "Tres horas, media jornada — pídelo y lo montamos."),
       ("Cumpleaños", "Nuestra ruta de cumpleaños: dos horas en moto, y después tapas "
-                     "entre las viñas y una cata del aceite de oliva de la zona. Dinos "
+                     "entre las viñas y una cata del aceite de oliva de la finca. Dinos "
                      "quién cumple y nosotros nos encargamos del resto."),
       ("Edad", "Desde los 12. Los menores de 15 van con un padre, madre o tutor presente "
                "ese día."),
@@ -553,7 +551,7 @@ T["ca"] = dict(
       "d'aquí a un mes no te'n recordaràs.",
       "Això és mitja hora de Tarragona: una muntanya sencera on no hi ha ningú més i una "
       "moto elèctrica que condueixes tu. Sense carnet. Sense experiència. Als cinc minuts "
-      "no vas darrere del guia a poc a poc — vas conduint.",
+      "no vas al ritme del més lent — vas conduint.",
       "És el pla que s'explica dues vegades.",
     ],
     kort_label="En trenta segons",
@@ -567,10 +565,9 @@ T["ca"] = dict(
          "Res. Ni carnet, ni experiència, ni equip — casc, proteccions, guants i la moto ja són "
          "aquí esperant-te. A partir dels 12 anys."),
         ("Quant costa",
-         "100 € per persona una hora, 175 € dues hores — la de dues hores és de la que parlen "
-         "les dues "
-         "ressenyes de sota. Tot inclòs. Es paga el mateix dia i pots anul·lar gratis fins "
-         "a 24 hores abans."),
+         "100 € per persona una hora, 175 € dues hores — la de dues hores és de la que parla "
+         "la majoria de les ressenyes de sota. Tot inclòs. 50 € per reservar, la resta el "
+         "mateix dia, i pots anul·lar gratis fins a 24 hores abans."),
     ],
     prakt_h="Abans que ho preguntis.",
     prakt=[
@@ -586,7 +583,7 @@ T["ca"] = dict(
                      "equipar-te i unes voltes de pràctica. En vols més? Tres hores, "
                      "mig dia — demana-ho i ho muntem."),
       ("Aniversaris", "La nostra ruta d'aniversari: dues hores en moto, i després tapes "
-                      "entre les vinyes i un tast de l'oli d'oliva de la zona. Digues-nos "
+                      "entre les vinyes i un tast de l'oli d'oliva de la finca. Digues-nos "
                       "qui fa anys i nosaltres ens encarreguem de la resta."),
       ("Edat", "A partir dels 12. Els menors de 15 van amb un pare, mare o tutor present "
                "aquell dia."),

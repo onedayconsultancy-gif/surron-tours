@@ -26,9 +26,9 @@ INFO["en"] = dict(
     feel_p1="There is no engine noise. You hear your own tyres on the gravel, the wind, "
             "and the birds — and then you open the throttle and the bike simply goes. "
             "No gears. No clutch. No lever to get wrong. You twist, and it pulls.",
-    feel_p2="Most people are riding properly within five minutes. Not creeping along "
-            "behind a guide — actually riding, choosing their own line, laughing inside "
-            "their helmet.",
+    feel_p2="Most people are riding properly within five minutes. Not crawling along at "
+            "the slowest rider's pace — actually riding, choosing their own line, laughing "
+            "inside their helmet.",
     feel_p3="And there is nobody else out there. This is not a public trail or a shared "
             "bike park. It is a working organic estate — 200 hectares of vines, olives "
             "and pine — and while you are on it, it is yours. No traffic. No queue. No "
@@ -155,7 +155,7 @@ INFO["en"] = dict(
          "possible."),
         ("Do you do birthdays?",
          "Yes, and it's one of our favourites. The birthday ride is two hours on the "
-         "bikes, then tapas set out among the vines and a tasting of the local olive oil. "
+         "bikes, then tapas set out among the vines and a tasting of the estate's own olive oil. "
          "Tell us who's celebrating, how many you are and the date, and we take care of "
          "the rest."),
         ("Can we come as a group?",
@@ -212,9 +212,8 @@ INFO["es"] = dict(
     feel_p1="No hay ruido de motor. Oyes tus propias ruedas sobre la grava, el viento y los "
             "pájaros — y entonces abres gas y la moto sale. Sin marchas. Sin embrague. Sin "
             "ninguna palanca que puedas equivocar. Giras el puño y tira.",
-    feel_p2="La mayoría está conduciendo de verdad a los cinco minutos. No detrás del guía a "
-            "paso de tortuga: conduciendo, eligiendo tu propia trazada, riéndote dentro del "
-            "casco.",
+    feel_p2="La mayoría está conduciendo de verdad a los cinco minutos. No al ritmo del más "
+            "lento: conduciendo, eligiendo tu propia trazada, riéndote dentro del casco.",
     feel_p3="Y ahí fuera no hay nadie más. Esto no es un circuito público ni un bike park "
             "compartido. Es una finca ecológica en funcionamiento — 200 hectáreas de viña, "
             "olivo y pino — y mientras estás dentro, es tuya. Sin tráfico. Sin colas. Sin "
@@ -340,7 +339,7 @@ INFO["es"] = dict(
          "Escríbenos con lo que tienes en mente y te decimos qué es posible."),
         ("¿Hacéis cumpleaños?",
          "Sí, y es de lo que más nos gusta. La ruta de cumpleaños son dos horas en moto, "
-         "y después tapas entre las viñas y una cata del aceite de oliva de la zona. "
+         "y después tapas entre las viñas y una cata del aceite de oliva de la finca. "
          "Dinos quién cumple, cuántos sois y la fecha, y nosotros nos encargamos del "
          "resto."),
         ("¿Podemos venir en grupo?",
